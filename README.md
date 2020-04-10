@@ -1,1 +1,1 @@
-# TradeSter
+# LingoLabs
