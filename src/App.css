@@ -19,11 +19,12 @@
   flex-direction: row;
 }
 
-.SignupForm{
+ .form-horizontal{
   color: white;
+  margin: 150px;
 
-  width: 100%;
 }
+
 
 .form-label {
   color: white;
