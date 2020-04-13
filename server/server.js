@@ -5,8 +5,12 @@ const session = require('express-session')
 const dbConnection = require('./database') 
 const MongoStore = require('connect-mongo')(session)
 const passport = require('./passport');
+const mongoose = require('mongoose');
+
 const app = express()
 const PORT = 8080
+mongoose.Promise = global.Promise;
+mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/lingo-labs`);
 // Route requires
 const user = require('./routes/user')
 
