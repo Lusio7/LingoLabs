@@ -1,7 +1,8 @@
 import React from "react";
 import "../Components/style/home.css";
-import "../App.css";
-import exm1 from "../Components/style/Images/exm1.gif"
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import exm1 from "../Components/style/Images/exm1.gif";
 import temp1 from "../Components/style/Images/temp1.jpg";
 import temp2 from "../Components/style/Images/temp2.jpg";
 import temp3 from "../Components/style/Images/temp3.jpg";
@@ -14,15 +15,12 @@ import marvin from "../Components/style/Images/marvin.jpg";
 import shawn from "../Components/style/Images/shawn.jpg";
 import joey from "../Components/style/Images/joey.jpg";
 import Footer from "../Components/Footer";
-
+import logo from "../Components/style/Images/logo.png";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button"
-
-
-
-
+import Button from "react-bootstrap/Button";
+import Contact from "../Components/Contact";
 
 function Home() {
   return (
@@ -92,8 +90,9 @@ function Home() {
       <Container className="displayContainer3">
         <h1 className="app">Apps & Tools</h1>
         <h4 className="subapp">
-          Integrate popular apps with your Lingo Lab website and access the
-          tools you use, all in one place.
+          Integrate popular apps with your{" "}
+          <img src={logo} className="logoImgText2" alt="Logo Text"></img>{" "}
+          website and access the tools you use, all in one place.
           <br />
           <Button variant="secondary" className="btnDummy" size="lg" active>
             Learn More
@@ -113,7 +112,9 @@ function Home() {
         <Row>
           <Col className="style">
             <h1 className="titleInst">
-              How to implemant Lingo Labs Templates to your website
+              How to implemant{" "}
+              <img src={logo} className="logoImgText" alt="logo text"></img>{" "}
+              Templates to your website
               <br />
               <Button
                 variant="secondary"
@@ -146,68 +147,16 @@ function Home() {
         </Row>
       </Container>
 
-      <Container fluid id="contact">
-        <Row>
-          <Col>
-            <h2 className="contact">CONTACT US!</h2>
-            <p className="chat">
-              <br />
-              You get a premium look on your website without struggling to
-              create it <br /> Let's chat!
-            </p>
-            <form>
-              <div className="form-row">
-                <div className="col">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="First name"
-                  />
-                </div>
-                <div className="col">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Last name"
-                  />
-                </div>
-              </div>
-              <div className="form-row">
-                <div className="col">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="E-mail"
-                  />
-                </div>
-                <div className="col">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Company"
-                  />
-                </div>
-              </div>
-            </form>
-            <div class="form-group">
-              <label for="exampleFormControlTextarea1"></label>
-              <textarea
-                class="form-control"
-                id="exampleFormControlTextarea1"
-                placeholder="Additional Information"
-                rows="3"
-              ></textarea>
-            </div>
-          </Col>
-        </Row>
+      <Container fluid>
+        <Contact />
       </Container>
 
-      <Container fluid className="team">
+      <Container fluid className="team1">
         <h1 className="text-center">Meet Our team</h1>
 
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-4">
+        <Container fluid className="team2">
+          <Row>
+            <Col lg={4}>
               <div className="our-team-main">
                 <div className="team-front">
                   <img src={niko} alt="niko" className="img-fluid" />
@@ -225,9 +174,9 @@ function Home() {
                   </span>
                 </div>
               </div>
-            </div>
+            </Col>
 
-            <div className="col-lg-4">
+            <Col lg={4}>
               <div className="our-team-main">
                 <div className="team-front">
                   <img src={lusio} alt="lusio" className="img-fluid" />
@@ -245,9 +194,9 @@ function Home() {
                   </span>
                 </div>
               </div>
-            </div>
+            </Col>
 
-            <div className="col-lg-4">
+            <Col lg={4}>
               <div className="our-team-main">
                 <div className="team-front">
                   <img src={marvin} alt="marvin" className="img-fluid" />
@@ -265,9 +214,9 @@ function Home() {
                   </span>
                 </div>
               </div>
-            </div>
+            </Col>
 
-            <div className="col-lg-4">
+            <Col lg={4}>
               <div className="our-team-main">
                 <div className="team-front">
                   <img src={shawn} alt="shawn" className="img-fluid" />
@@ -285,9 +234,9 @@ function Home() {
                   </span>
                 </div>
               </div>
-            </div>
+            </Col>
 
-            <div className="col-lg-4">
+            <Col lg={4}>
               <div className="our-team-main">
                 <div className="team-front">
                   <img src={joey} alt="joey" className="img-fluid" />
@@ -305,9 +254,9 @@ function Home() {
                   </span>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </Container>
 
       <Container fluid>

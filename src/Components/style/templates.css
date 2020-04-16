@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.mainTemp{
+    position: relative;
+    right:4%;
+    min-width: 100vw;
+
+}
+
+#bcgTemp {
+    margin-top: -10px;
+    min-width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../style/Images/bcg-temp.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.temp1 {
+    margin-top: 250px;
+    margin-left: 40px;
+}
+
+.tempTitle {
+    font-size: 60px;
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+}
+
+.text1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    color: #fff;
+    width: 50vw;
+}
+
+.filter_container {
+    margin-right: -15px;
+}
+
