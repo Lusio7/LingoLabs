@@ -7,20 +7,20 @@ body {
     padding: 0px;
 }
 
-.navbar{
-    margin:0 auto;
-   ;
+.margin {
+    position: relative;
+    left: 5%;
+}
+
+.navbar {
+    margin: 0 auto;
+    ;
 }
 
 #nav {
-    position: -webkit-sticky;
-    position: sticky;
-    /* sticky or fixed are fine */
     position: fixed;
     top: 0;
-    /* background when scroll is in the top */
     transition: background .5s;
-    /* control how smooth the background changes */
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -30,10 +30,6 @@ body {
     margin-left: -20px;
     padding: 20px;
     background: linear-gradient(to bottom, #000, #0003 90%, #0000);
-}
-
-#nav.scrolled {
-    background: black;
 }
 
 #nav li a {
@@ -58,9 +54,9 @@ body {
 
 .logoImg {
     border-radius: 50%;
-    margin-top: -30px;
+    margin-top: -20px;
     background-color: #0a0606;
-    margin-left: 30px;
+    margin-left: 60px;
     width: 125px;
     height: 125px;
 }
@@ -75,7 +71,7 @@ body {
 }
 
 .logoImgText2 {
-    border:1px solid black;
+    border: 1px solid black;
     border-radius: 50%;
     margin-top: -10px;
     background-color: #0a0606;
@@ -92,6 +88,10 @@ body {
         justify-content: space-around;
         list-style: none;
         font-family: 'Lobster', cursive;
+    }
+    .margin {
+        position: relative;
+        left: -1%;
     }
     .logoImg {
         display: none;
@@ -111,6 +111,10 @@ body {
         justify-content: space-around;
         list-style: none;
         font-family: 'Lobster', cursive;
+    }
+    .margin {
+        position: relative;
+        left: -1%;
     }
     #bcg {
         min-height: 100vh;

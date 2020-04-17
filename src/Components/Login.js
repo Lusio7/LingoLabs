@@ -4,7 +4,9 @@ import "../Components/style/signin.css";
 function Login() {
   return (
     <div className="m">
-      <a href="#openModal">LogIn</a>
+      <a href="#openModal" className="nav-links">
+        LogIn
+      </a>
 
       <div id="openModal" class="modalDialog">
         <div>

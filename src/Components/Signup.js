@@ -4,7 +4,9 @@ import "../Components/style/signin.css";
 function Signup() {
   return (
     <div className="m">
-      <a href="#openModalSignin">SignUp</a>
+      <a href="#openModalSignin" className="nav-links">
+        SignUp
+      </a>
 
       <div id="openModalSignin" class="modalDialog">
         <div>

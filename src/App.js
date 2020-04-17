@@ -13,6 +13,17 @@ import Contact from "./Components/Contact";
 import Container from "react-bootstrap/Container";
 
 function Navbar() {
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("nav").style.top = "0";
+    } else {
+      document.getElementById("nav").style.top = "-250px";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
   return (
     <Router>
       <Container fluid className="navbar">
@@ -24,13 +35,13 @@ function Navbar() {
             <Link to="/templates">View Templates</Link>
           </li>
           <img src={logo} className="logoImg" alt="Logo" />
-          <li>
+          <li className="margin">
             <Login />
           </li>
-          <li>
+          <li className="margin">
             <Signup />
           </li>
-          <li>
+          <li className="margin">
             <Link to="/contact">Contact Us</Link>
           </li>
         </ul>

@@ -21,12 +21,13 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Contact from "../Components/Contact";
+import Jumbotron from "react-bootstrap/Jumbotron";
 
 function Home() {
   return (
-    <div className="main">
-      <Container fluid id="bcg">
-        <Container fluid id="titleDiv">
+    <Container fluid className="main">
+      <Jumbotron fluid id="bcg">
+        <Container className="titleDiv">
           <h1 className="title">Create a Website You’re Proud Of</h1>
 
           <h4 className="subTitle">
@@ -40,7 +41,7 @@ function Home() {
           <path className="a2" d="M0 20 L30 52 L60 20"></path>
           <path className="a3" d="M0 40 L30 72 L60 40"></path>
         </svg>
-      </Container>
+      </Jumbotron>
 
       <Container fluid className="displayContainer1">
         <Row>
@@ -262,7 +263,7 @@ function Home() {
       <Container fluid>
         <Footer />
       </Container>
-    </div>
+    </Container>
   );
 }
 export default Home;
