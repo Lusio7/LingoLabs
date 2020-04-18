@@ -7,7 +7,7 @@ import temp1 from "../Components/style/Images/temp1.jpg";
 import temp2 from "../Components/style/Images/temp2.jpg";
 import temp3 from "../Components/style/Images/temp3.jpg";
 import temp4 from "../Components/style/Images/temp4.jpg";
-import temp5 from "../Components/style/Images/temp5.jpg";
+import tmp_fix from "../Components/style/Images/tmp_fix.jpg";
 import temp6 from "../Components/style/Images/temp6.jpg";
 import niko from "../Components/style/Images/niko.jpg";
 import lusio from "../Components/style/Images/lusio.jpg";
@@ -45,7 +45,7 @@ function Home() {
 
       <Container fluid className="displayContainer1">
         <Row>
-          <Col>
+          <Col className="changeme">
             <h1 className="display-4 display-1">
               The leader in website design
             </h1>
@@ -84,7 +84,7 @@ function Home() {
         <img src={temp2} className="Tmp" alt="img"></img>
         <img src={temp3} className="Tmp" alt="img"></img>
         <img src={temp4} className="Tmp" alt="img"></img>
-        <img src={temp5} className="Tmp" alt="img"></img>
+        <img src={tmp_fix} className="Tmp" alt="img"></img>
         <img src={temp6} className="Tmp" alt="img"></img>
       </Container>
 
@@ -102,11 +102,11 @@ function Home() {
       </Container>
 
       <Container className="toolsDisplay">
-        <i className="fa fa-twitter fa-5x" id="tools"></i>
-        <i className="fa fa-youtube fa-5x" id="tools"></i>
-        <i className="fa fa-dropbox fa-5x" id="tools"></i>
-        <i className="fa fa-instagram fa-5x" id="tools"></i>
-        <i className="fa fa-google fa-5x" id="tools"></i>
+        <i className="fa fa-twitter fa-3x" id="tools"></i>
+        <i className="fa fa-youtube fa-3x" id="tools"></i>
+        <i className="fa fa-dropbox fa-3x" id="tools"></i>
+        <i className="fa fa-instagram fa-3x" id="tools"></i>
+        <i className="fa fa-google fa-3x" id="tools"></i>
       </Container>
 
       <Container fluid className="instructions">
@@ -154,6 +154,7 @@ function Home() {
 
       <Container fluid className="team1">
         <h1 className="text-center">Meet Our team</h1>
+        <hr className="style_hr" />
 
         <Container fluid className="team2">
           <Row>

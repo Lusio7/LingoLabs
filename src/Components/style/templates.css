@@ -8,6 +8,11 @@ body {
     padding: 0;
 }
 
+Link {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 .mainTemp {
     position: relative;
     right: 4%;
@@ -48,24 +53,22 @@ body {
 }
 
 .view_title {
-    font-size: 50px;
     font-family: 'Oswald', sans-serif;
 }
 
 .view_txt {
     margin-bottom: 50px;
     position: relative;
-    left: 3%;
+    left: 10%;
 }
 
 .browse_title {
+    margin-bottom: -100px;
     font-size: 50px;
     font-family: 'Oswald', sans-serif;
-    margin: 0 auto;
 }
 
 .browse_txt {
-    margin-top: 50px;
     margin-bottom: 100px;
 }
 
@@ -74,48 +77,75 @@ body {
 }
 
 .temp_container {
-    margin-top: 40px;
-    margin-left: 80px;
+    margin-top: 70px;
+    margin-left: 20px;
 }
 
 .temp_image {
     display: block;
-    width: 410px;
-    height: 330px;
+    width: 450px;
+    height: 300px;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.temp_image:hover {
     cursor: pointer;
 }
 
 .overlay {
     position: absolute;
-    top: 11%;
+    top: 19%;
     bottom: 0;
-    left: 18%;
+    left: 6.7%;
     right: 0;
-    height: 330px;
-    width: 410px;
+    height: 300px;
+    width: 450px;
     opacity: 0;
     transition: .5s ease;
-    border-radius: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000000;
+    -webkit-box-shadow: 0px 0px 5px 0px #000000;
+    box-shadow: 0px 0px 5px 0px #000000;
 }
 
 .temp_container:hover .overlay {
-    opacity: 1;
+    opacity: 0.8;
 }
 
 .button {
-    width: 200px;
+    box-shadow: none;
+    width: 100px;
     position: relative;
-    top: 31%;
-    left: 21%;
+    left: 25%;
     margin: 10px;
     border-radius: 5px;
     text-align: center;
-    background-color: #fff;
     font-family: 'Oswald', sans-serif;
-    color: black;
-    outline: none;
+    background-color: #f1f1f1;
+    border: 1px solid black;
+    box-shadow: 0px 0px 5px 0px black;
+    transition: transform .2s;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.hr_style {
+    width: 80%;
+}
+
+.card_text {
+    margin-left: 5px;
+    color: #000000;
+}
+
+.card_title {
+    color: #000000;
     text-align: center;
+    margin-top: 10px;
 }
 
 /* FILTER CONTAINER STARTS*/
@@ -174,6 +204,7 @@ body {
     position: sticky;
     top: 0;
     min-height: 100vh;
+    box-shadow: none;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -189,16 +220,15 @@ body {
     text-align: center;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: none;
 }
 
 /* Change background color of buttons on hover */
 
 .tab button:hover {
     border-bottom: 3px solid black;
-    
+    box-shadow: none;
 }
-
-
 
 .tabcontent {
     float: left;
