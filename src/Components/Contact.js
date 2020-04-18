@@ -1,7 +1,7 @@
 import React from "react";
 import "../Components/style/home.css";
 
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 function Contact() {
   return (
@@ -56,9 +56,9 @@ function Contact() {
               placeholder="Additional Information"
               rows="3"
             ></textarea>
-            <Button className="btn_submit" variant="primary">
+            <button className="btn_submit" variant="primary">
               Send
-            </Button>{" "}
+            </button>{" "}
           </div>
         </Col>
       </Row>

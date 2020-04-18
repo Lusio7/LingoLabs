@@ -2,15 +2,10 @@ import React from "react";
 import "../Components/style/templates.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Jumbotron, Row, Col } from "react-bootstrap";
-
-
-import niko from "../Components/style/Images/niko.jpg"
-
-
+import $ from "jquery";
+import replace from "../Components/style/Images/replace.png";
 
 function Templates() {
-
-
   return (
     <Container fluid className="mainTemp">
       <Jumbotron fluid id="bcgTemp">
@@ -24,45 +19,49 @@ function Templates() {
         </Container>
       </Jumbotron>
 
-      <Container fluid className="test">
+      <Container fluid className="main_content">
         <div class="tab">
           <Container className="view_txt">
             <h2 className="view_title">Browse by</h2>
           </Container>
-          <button class="tablinks">Popular Design</button>
-          <button class="tablinks">Photography</button>
-          <button class="tablinks">Local Business</button>
-          <button class="tablinks">Personal & CV</button>
-          <button class="tablinks">Restaurants</button>
-          <button class="tablinks">Real Estate</button>
+          <button class="tablinks1">Popular Design</button>
+          <button class="tablinks2">Photography</button>
+          <button class="tablinks3">Local Business</button>
+          <button class="tablinks4">Personal & CV</button>
+          <button class="tablinks5">Restaurants</button>
+          <button class="tablinks6">Real Estate</button>
         </div>
 
         <div id="London" class="tabcontent">
           <Container className="browse_txt">
-            <h2 className="browse_title">Templates</h2>
+            <h1 className="browse_title">Templates</h1>
           </Container>
           <Row>
             <Col>
               <div className="temp_container">
-                <img src={niko} alt="Avatar" className="temp_image"></img>
+                <img src={replace} alt="Avatar" className="temp_image"></img>
                 <div className="overlay">
+                  <h3 className="card_title">Title</h3>
+                  <hr className="hr_style" />
+                  <p className="card_text">Template Description</p>
                   <button className="button" variant="outline-primary">
                     Demo
                   </button>
-                  <br />
                   <button className="button" variant="outline-primary">
-                    More Information
+                    Download
                   </button>
                 </div>
               </div>
             </Col>
             <Col>
               <div className="temp_container">
-                <img src={niko} alt="Avatar" className="temp_image"></img>
+                <img src={replace} alt="Avatar" className="temp_image"></img>
                 <div className="overlay">
+                  <h3 className="card_title">Title</h3>
+                  <hr className="hr_style" />
+                  <p className="card_text">Template Description</p>
                   <button className="button">Demo</button>
-                  <br />
-                  <button className="button">More Information</button>
+                  <button className="button">Download</button>
                 </div>
               </div>
             </Col>
@@ -70,45 +69,53 @@ function Templates() {
           <Row>
             <Col>
               <div className="temp_container">
-                <img src={niko} alt="Avatar" className="temp_image"></img>
+                <img src={replace} alt="Avatar" className="temp_image"></img>
                 <div className="overlay">
+                  <h3 className="card_title">Title</h3>
+                  <hr className="hr_style" />
+                  <p className="card_text">Template Description</p>
                   <button className="button" variant="outline-primary">
                     Demo
                   </button>
-                  <br />
                   <button className="button" variant="outline-primary">
-                    More Information
+                    Download
                   </button>
                 </div>
               </div>
             </Col>
             <Col>
               <div className="temp_container">
-                <img src={niko} alt="Avatar" className="temp_image"></img>
+                <img src={replace} alt="Avatar" className="temp_image"></img>
                 <div className="overlay">
+                  <h3 className="card_title">Title</h3>
+                  <hr className="hr_style" />
+                  <p className="card_text">Template Description</p>
                   <button className="button">Demo</button>
-                  <br />
-                  <button className="button">More Information</button>
+                  <button className="button">Download</button>
                 </div>
               </div>
             </Col>
             <Col>
               <div className="temp_container">
-                <img src={niko} alt="Avatar" className="temp_image"></img>
+                <img src={replace} alt="Avatar" className="temp_image"></img>
                 <div className="overlay">
+                  <h3 className="card_title">Title</h3>
+                  <hr className="hr_style" />
+                  <p className="card_text">Template Description</p>
                   <button className="button">Demo</button>
-                  <br />
-                  <button className="button">More Information</button>
+                  <button className="button">Download</button>
                 </div>
               </div>
             </Col>
             <Col>
               <div className="temp_container">
-                <img src={niko} alt="Avatar" className="temp_image"></img>
+                <img src={replace} alt="Avatar" className="temp_image"></img>
                 <div className="overlay">
+                  <h3 className="card_title">Title</h3>
+                  <hr className="hr_style" />
+                  <p className="card_text">Template Description</p>
                   <button className="button">Demo</button>
-                  <br />
-                  <button className="button">More Information</button>
+                  <button className="button">Download</button>
                 </div>
               </div>
             </Col>

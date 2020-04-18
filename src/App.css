@@ -34,22 +34,22 @@ body {
 
 #nav li a {
     text-decoration: none;
-    border-radius: 5px;
     font-size: 25px;
     padding: 10px;
     color: #fff;
-    transition: transform .2s;
     outline: none;
     border: none;
+    box-shadow: none;
+  
 }
 
 #nav li a:hover {
-    transform: scale(1.1);
     text-decoration: none;
     outline: none;
     border-bottom: 3px solid #fff;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
     color: #Fff;
+    box-shadow: none;
+   
 }
 
 .logoImg {
@@ -57,8 +57,8 @@ body {
     margin-top: -20px;
     background-color: #0a0606;
     margin-left: 60px;
-    width: 125px;
-    height: 125px;
+    width: 115px;
+    height: 115px;
 }
 
 .logoImgText {
