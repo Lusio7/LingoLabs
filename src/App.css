@@ -54,11 +54,11 @@ body {
 
 .logoImg {
     border-radius: 50%;
-    margin-top: -20px;
+    margin-top: -12px;
     background-color: #0a0606;
     margin-left: 60px;
-    width: 115px;
-    height: 115px;
+    width: 100px;
+    height: 100px;
 }
 
 .logoImgText {
