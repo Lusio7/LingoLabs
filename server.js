@@ -21,7 +21,7 @@ db.once('open', function callback () {
 
 const express = require('express'),
 			app = express(),
-			port = 4000
+			port = 4001
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
