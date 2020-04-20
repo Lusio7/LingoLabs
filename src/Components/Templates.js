@@ -3,18 +3,25 @@ import "../Components/style/templates.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Jumbotron, Row, Col } from "react-bootstrap";
 import $ from "jquery";
-import replace from "../Components/style/Images/replace.png";
-
 import popular1 from "../Components/style/Images/popular1.png";
 import popular2 from "../Components/style/Images/popular2.png";
 import popular3 from "../Components/style/Images/popular3.png";
 import popular4 from "../Components/style/Images/popular4.png";
 import popular5 from "../Components/style/Images/popular5.png";
 import popular6 from "../Components/style/Images/popular6.png";
+import Footer from "../Components/Footer";
+import Portfolio from "../Components/Portfolio";
+
+import Photo from "../Components/Photo";
 
 
 
 function Templates() {
+
+
+
+
+
   return (
     <Container fluid className="mainTemp">
       <Jumbotron fluid id="bcgTemp">
@@ -30,20 +37,17 @@ function Templates() {
 
       <Container fluid className="main_content">
         <div class="tab">
-          <Container className="view_txt">
-            <h2 className="view_title">Browse by</h2>
-          </Container>
-          <button class="tablinks1">Popular Design</button>
-          <button class="tablinks2">Photography</button>
-          <button class="tablinks3">Local Business</button>
-          <button class="tablinks4">Personal & CV</button>
-          <button class="tablinks5">Restaurants</button>
-          <button class="tablinks6">Real Estate</button>
+          <button class="tablinks">Popular Design</button>
+          <button class="tablinks">Photography</button>
+          <button class="tablinks">Local Business</button>
+          <button class="tablinks">Portfolio & CV</button>
+          <button class="tablinks">Restaurants</button>
+          <button class="tablinkss">Real Estate</button>
         </div>
 
-        <div id="London" class="tabcontent">
+        <div className="main-wrapper" id="popular">
           <Container className="browse_txt">
-            <h1 className="browse_title">Popular Design</h1>
+            <h1 className="browse_title" id="popular-title">Popular Design</h1>
           </Container>
           <Row>
             <Col>
@@ -68,14 +72,7 @@ function Templates() {
                     </a>
                   </button>
                   <button className="button" variant="outline-primary">
-                    <a
-                      href="src/Components/Download-file/popular1"
-                      download="Popular Template 2"
-                      without
-                      rel="noopener noreferrer"
-                    >
-                      Download
-                    </a>
+                  Download
                   </button>
                 </div>
               </div>
@@ -102,14 +99,7 @@ function Templates() {
                     </a>
                   </button>
                   <button className="button" variant="outline-primary">
-                    <a
-                      href="src/Components/Download-file/popular2"
-                      download="Popular Template 2"
-                      without
-                      rel="noopener noreferrer"
-                    >
-                      Download
-                    </a>
+                Download
                   </button>
                 </div>
               </div>
@@ -137,15 +127,8 @@ function Templates() {
                       Demo
                     </a>
                   </button>
-                    <button className="button" variant="outline-primary">
-                    <a
-                      href="src/Components/Download-file/popular1"
-                      download="popular1"
-                      without
-                      rel="noopener noreferrer"
-                    >
-                      Download
-                    </a>
+                  <button className="button" variant="outline-primary">
+                    Download
                   </button>
                 </div>
               </div>
@@ -227,6 +210,15 @@ function Templates() {
             </Col>
           </Row>
         </div>
+
+     <Photo/>
+     <Portfolio/>
+      </Container>
+
+      {/* KEEP EVERYTHING INSIDE */}
+
+      <Container fluid>
+        <Footer />
       </Container>
     </Container>
   );
