@@ -40,7 +40,7 @@ function Photo() {
                 </a>
               </button>
               <button className="button" variant="outline-primary">
-                Download
+                Checkout
               </button>
             </div>
           </div>
@@ -67,7 +67,7 @@ function Photo() {
                 </a>
               </button>
               <button className="button" variant="outline-primary">
-                Download
+                Checkout
               </button>
             </div>
           </div>
@@ -96,7 +96,7 @@ function Photo() {
                 </a>
               </button>
               <button className="button" variant="outline-primary">
-                Download
+                Checkout
               </button>
             </div>
           </div>
@@ -122,7 +122,7 @@ function Photo() {
                   Demo
                 </a>
               </button>
-              <button className="button">Download</button>
+              <button className="button">Checkout</button>
             </div>
           </div>
         </Col>
@@ -148,7 +148,7 @@ function Photo() {
                 </a>
               </button>
               <button className="button" variant="outline-primary">
-                Download
+                Checkout
               </button>
             </div>
           </div>
@@ -174,7 +174,7 @@ function Photo() {
                   Demo
                 </a>
               </button>
-              <button className="button">Download</button>
+              <button className="button">Checkout</button>
             </div>
           </div>
         </Col>

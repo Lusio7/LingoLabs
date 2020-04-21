@@ -39,7 +39,7 @@ function Portfolio() {
                 </a>
               </button>
               <button className="button" variant="outline-primary">
-                Download
+                Checkout
               </button>
             </div>
           </div>
@@ -66,7 +66,7 @@ function Portfolio() {
                 </a>
               </button>
               <button className="button" variant="outline-primary">
-                Download
+                Checkout
               </button>
             </div>
           </div>
@@ -95,7 +95,7 @@ function Portfolio() {
                 </a>
               </button>
               <button className="button" variant="outline-primary">
-                Download
+                Checkout
               </button>
             </div>
           </div>

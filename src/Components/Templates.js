@@ -18,8 +18,6 @@ import Estate from "../Components/Estate";
 import Photo from "../Components/Photo";
 
 function Templates() {
-
-
   return (
     <Container fluid className="mainTemp">
       <Jumbotron fluid id="bcgTemp">
@@ -69,7 +67,7 @@ function Templates() {
               Portfolio & CV
             </a>
           </button>
-      
+
           <button className="tablinks6">
             {" "}
             <a
@@ -119,7 +117,7 @@ function Templates() {
                     </a>
                   </button>
                   <button className="button" variant="outline-primary">
-                    Download
+                    Checkout
                   </button>
                 </div>
               </div>
@@ -146,7 +144,7 @@ function Templates() {
                     </a>
                   </button>
                   <button className="button" variant="outline-primary">
-                    Download
+                    Checkout
                   </button>
                 </div>
               </div>
@@ -175,7 +173,7 @@ function Templates() {
                     </a>
                   </button>
                   <button className="button" variant="outline-primary">
-                    Download
+                    Checkout
                   </button>
                 </div>
               </div>
@@ -201,7 +199,7 @@ function Templates() {
                       Demo
                     </a>
                   </button>
-                  <button className="button">Download</button>
+                  <button className="button">Checkout</button>
                 </div>
               </div>
             </Col>
@@ -226,7 +224,7 @@ function Templates() {
                       Demo
                     </a>
                   </button>
-                  <button className="button">Download</button>
+                  <button className="button">Checkout</button>
                 </div>
               </div>
             </Col>
@@ -251,7 +249,7 @@ function Templates() {
                       Demo
                     </a>
                   </button>
-                  <button className="button">Download</button>
+                  <button className="button">Checkout</button>
                 </div>
               </div>
             </Col>

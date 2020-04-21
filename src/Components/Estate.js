@@ -38,7 +38,7 @@ function Estate() {
                 </a>
               </button>
               <button className="button" variant="outline-primary">
-                Download
+                Checkout
               </button>
             </div>
           </div>
@@ -65,7 +65,7 @@ function Estate() {
                 </a>
               </button>
               <button className="button" variant="outline-primary">
-                Download
+                Checkout
               </button>
             </div>
           </div>
