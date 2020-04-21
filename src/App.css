@@ -1,38 +1,122 @@
-.App {
-  text-align: center;
+* {
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    margin: 0px;
+    padding: 0px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.margin {
+    position: relative;
+    left: 5%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar {
+    margin: 0 auto;
+    ;
 }
 
-.App-link {
-  color: #61dafb;
+#nav {
+    position: fixed;
+    top: 0;
+    transition: background .5s;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    font-family: 'Lobster', cursive;
+    z-index: 1;
+    margin-left: -20px;
+    padding: 20px;
+    background: linear-gradient(to bottom, #000, #0003 90%, #0000);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#nav li a {
+    text-decoration: none;
+    font-size: 25px;
+    padding: 10px;
+    color: #fff;
+    outline: none;
+    border: none;
+    box-shadow: none;
+  
+}
+
+#nav li a:hover {
+    text-decoration: none;
+    outline: none;
+    border-bottom: 3px solid #fff;
+    color: #Fff;
+    box-shadow: none;
+   
+}
+
+.logoImg {
+    border-radius: 50%;
+    margin-top: -12px;
+    background-color: #0a0606;
+    margin-left: 60px;
+    width: 100px;
+    height: 100px;
+}
+
+.logoImgText {
+    border-radius: 50%;
+    margin-top: -20px;
+    background-color: #0a0607;
+    margin-left: 30px;
+    width: 90px;
+    height: 90px;
+}
+
+.logoImgText2 {
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-top: -10px;
+    background-color: #0a0606;
+    margin-left: 5px;
+    width: 90px;
+    height: 90px;
+}
+
+@media only screen and (max-width: 795px) {
+    #nav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        list-style: none;
+        font-family: 'Lobster', cursive;
+    }
+    .margin {
+        position: relative;
+        left: -1%;
+    }
+    .logoImg {
+        display: none;
+    }
+    #bcg {
+        min-height: 100vh;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    #nav {
+        margin-top: 5px;
+        margin-bottom: 15px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        list-style: none;
+        font-family: 'Lobster', cursive;
+    }
+    .margin {
+        position: relative;
+        left: -1%;
+    }
+    #bcg {
+        min-height: 100vh;
+    }
 }
