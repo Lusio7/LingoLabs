@@ -14,7 +14,7 @@ function Photo() {
     <div className="main-wrapper" id="photo">
       <Container className="browse_txt">
         <h1 className="browse_title" id="photo-title">
-          Photography
+          Photography Templates
         </h1>
       </Container>
       <Row>

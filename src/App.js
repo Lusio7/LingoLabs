@@ -11,6 +11,7 @@ import Login from "../src/Components/Login";
 import Home from "../src/Components/Home";
 import Contact from "./Components/Contact";
 import Container from "react-bootstrap/Container";
+import UserPortal from "./pages/userPortal";
 
 function Navbar() {
   var prevScrollpos = window.pageYOffset;
@@ -42,8 +43,13 @@ function Navbar() {
             <Signup />
           </li>
           <li className="margin">
+            <Link to="/userPortal">User Portal</Link>
+          </li>
+          <li className="margin">
             <Link to="/contact">Contact Us</Link>
           </li>
+          
+          
         </ul>
 
         <Switch>
@@ -56,6 +62,10 @@ function Navbar() {
           <Route path="/contact">
             <Contact />
           </Route>
+          <Route path="/userPortal">
+            <UserPortal />
+          </Route>
+         
         </Switch>
       </Container>
     </Router>

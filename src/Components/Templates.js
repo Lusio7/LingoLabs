@@ -10,14 +10,15 @@ import popular4 from "../Components/style/Images/popular4.png";
 import popular5 from "../Components/style/Images/popular5.png";
 import popular6 from "../Components/style/Images/popular6.png";
 import Footer from "../Components/Footer";
-import Portfolio from "../Components/Portfolio";
-import Business from "../Components/Business";
-import Restaurant from "../Components/Restaurant";
-import Estate from "../Components/Estate";
 
 import Photo from "../Components/Photo";
 
+
+
 function Templates() {
+
+
+
 
 
   return (
@@ -35,66 +36,17 @@ function Templates() {
 
       <Container fluid className="main_content">
         <div class="tab">
-          <button className="tablinks1">
-            <a
-              href="#popular-title"
-              style={{ color: "black", textDecoration: "none" }}
-            >
-              Popular Design
-            </a>
-          </button>
-
-          <button className="tablinks2">
-            {" "}
-            <a
-              href="#photo-title"
-              style={{ color: "black", textDecoration: "none" }}
-            >
-              Photography
-            </a>
-          </button>
-          <button className="tablinks3">
-            <a
-              href="#business-title"
-              style={{ color: "black", textDecoration: "none" }}
-            >
-              Local Business
-            </a>
-          </button>
-          <button className="tablinks4">
-            <a
-              href="#portfolio-title"
-              style={{ color: "black", textDecoration: "none" }}
-            >
-              Portfolio & CV
-            </a>
-          </button>
-      
-          <button className="tablinks6">
-            {" "}
-            <a
-              href="#restaurant-title"
-              style={{ color: "black", textDecoration: "none" }}
-            >
-              Restaurant
-            </a>
-          </button>
-          <button className="tablinks6">
-            {" "}
-            <a
-              href="#estate-title"
-              style={{ color: "black", textDecoration: "none" }}
-            >
-              Real Estate
-            </a>
-          </button>
+          <button class="tablinks">Popular Design</button>
+          <button class="tablinks">Photography</button>
+          <button class="tablinks">Local Business</button>
+          <button class="tablinks">Personal & CV</button>
+          <button class="tablinks">Restaurants</button>
+          <button class="tablinkss">Real Estate</button>
         </div>
 
         <div className="main-wrapper" id="popular">
           <Container className="browse_txt">
-            <h1 className="browse_title" id="popular-title">
-              Popular Design
-            </h1>
+            <h1 className="browse_title" id="popular-title">Popular Design</h1>
           </Container>
           <Row>
             <Col>
@@ -119,7 +71,7 @@ function Templates() {
                     </a>
                   </button>
                   <button className="button" variant="outline-primary">
-                    Download
+                  Download
                   </button>
                 </div>
               </div>
@@ -146,7 +98,7 @@ function Templates() {
                     </a>
                   </button>
                   <button className="button" variant="outline-primary">
-                    Download
+                Download
                   </button>
                 </div>
               </div>
@@ -258,11 +210,7 @@ function Templates() {
           </Row>
         </div>
 
-        <Photo />
-        <Portfolio />
-        <Business />
-        <Restaurant />
-        <Estate />
+     <Photo/>
       </Container>
 
       {/* KEEP EVERYTHING INSIDE */}

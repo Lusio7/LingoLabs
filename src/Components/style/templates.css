@@ -13,10 +13,6 @@ Link {
     text-decoration: inherit;
 }
 
-a{
-    text-decoration: none;
-}
-
 .mainTemp {
     position: relative;
     right: 2%;
@@ -225,13 +221,6 @@ a{
     box-shadow: none;
 }
 
-.main_content {
-    margin-top:-34px;
-    background-color: rgb(250, 250, 250);
-    position: relative;
-    left: -5px;
-}
-
 .main-wrapper {
     margin-right: -10px;
     float: right;
@@ -239,49 +228,15 @@ a{
     width: 75%;
     border-left: none;
     min-height: 100vh;
+
 }
 
 #photo {
     position: relative;
-    left: 25.7%;
+    left:25.7%;
     padding: 0px 12px;
     width: 75%;
     border-left: none;
     min-height: 100vh;
-}
-
-#portfolio {
-    position: relative;
-    left: 25.7%;
-    padding: 0px 12px;
-    width: 75%;
-    border-left: none;
-    min-height: 100vh;
-}
-
-#business {
-    position: relative;
-    left: 25.7%;
-    padding: 0px 12px;
-    width: 75%;
-    border-left: none;
-    min-height: 100vh;
-}
-
-#restaurant {
-    position: relative;
-    left: 25.7%;
-    padding: 0px 12px;
-    width: 75%;
-    border-left: none;
-    min-height: 100vh;
-}
-
-#estate {
-    position: relative;
-    left: 25.7%;
-    padding: 0px 12px;
-    width: 75%;
-    border-left: none;
-    min-height: 100vh;
+    
 }

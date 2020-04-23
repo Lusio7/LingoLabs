@@ -1,52 +1,126 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../Components/style/signin.css";
+import { Redirect } from 'react-router-dom'
+import isAuthenticated from '../lib/isAuthenticated'
+import "../Components/style/signin.css";
+import API from "../utils/API";
 
 function Signup() {
+
+  const [newUser,setNewUser]=useState(
+    {username:"",
+    password:"",
+    email:""
+
+    })
+
+    const[loggedin, setLoggedin]=useState(
+      false
+    )
+  
+  
+  const handleInputChange = function(event) {
+    const { name, value } = event.target;
+    console.log(name, value);
+    setNewUser({...newUser, [name]: value})};
+
+  const handleSignUpSubmit =  async function(event){
+    
+    console.log(newUser);
+    // this.props.history.push("/"); 
+    // this.history.pushState(null, '/');
+
+
+  event.stopPropagation();
+  event.preventDefault();
+  var newUserInfo = {username:newUser.username,
+                email:newUser.email};
+  var newSignup = {username:newUser.username,
+             password:newUser.password};
+  try{
+  API.signup(newSignup)
+  .then((data) => {
+    console.log(data)
+  localStorage.setItem('token', data.token)
+  API.createUserInfo(newUserInfo)
+  setLoggedin(true)
+
+  // this.history.pushState(null, '/');
+  // this.props.history.push("/"); 
+  alert("helo!");
+
+})}
+catch(err){
+  console.error(err)
+}
+  
+  }
+
+  
+
+  // if (loggedin == true ) {
+  //   return (
+  //     <Redirect
+  //       to={{
+  //         pathname: '/',
+  //         state: { from: this.props.location }
+  //       }}
+  //     />
+  //   )}
+
+
+
+    
   return (
     <div className="m">
       <a href="#openModalSignin" className="nav-links">
         SignUp
       </a>
 
-      <div id="openModalSignin" class="modalDialog">
+      <div id="openModalSignin" className="modalDialog">
         <div>
-          <a href="#close" title="Close" class="close">
+          <a href="#close" title="Close" className="close">
             X
           </a>
           <h2>Sign Up</h2>
-          <div class="wrapper fadeInDown">
+          <div className="wrapper fadeInDown">
             <div id="formContent">
-              <div class="fadeIn first"></div>
+              <div className="fadeIn first"></div>
               <form>
                 <input
                   type="text"
                   id="login"
-                  class="fadeIn second"
-                  name="Name"
+                  className="fadeIn second"
+                  name="username"
                   placeholder="John Doe"
+                  onChange={handleInputChange}
                 />
                 <input
                   type="text"
                   id="password"
-                  class="fadeIn third"
+                  className="fadeIn third"
                   name="email"
                   placeholder="Example@gmail.com"
+                  onChange={handleInputChange}
                 />
 
                 <input
                   type="text"
                   id="password"
-                  class="fadeIn third"
-                  name="login"
+                  className="fadeIn third"
+                  name="password"
                   placeholder="Password"
+                  onChange={handleInputChange}
                 />
                 <input
                   type="submit"
                   id="SignInBtn"
-                  class="fadeIn fourth"
+                  className="fadeIn fourth"
                   value="Sign Up"
+                  onClick={handleSignUpSubmit}
                 />
               </form>
+  <div className = {"fadeIn third "+ (loggedin == true ? 'visible':'invisible' )}>Signed Up</div>
             </div>
           </div>
         </div>

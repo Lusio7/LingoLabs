@@ -123,7 +123,7 @@ function Home() {
                 size="lg"
                 active
               >
-                <i class="fa fa-angle-double-right"></i>
+                <i className="fa fa-angle-double-right"></i>
               </Button>
             </h1>
           </Col>

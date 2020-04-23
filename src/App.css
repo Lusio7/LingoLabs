@@ -120,3 +120,15 @@ body {
         min-height: 100vh;
     }
 }
+
+.invisible{
+visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
+    color: #cccccc;
+    position:relative;
+    bottom:10px;
+
+}

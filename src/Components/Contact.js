@@ -48,10 +48,10 @@ function Contact() {
               </div>
             </div>
           </form>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1"></label>
+          <div className="form-group">
+            <label htmlFor="exampleFormControlTextarea1"></label>
             <textarea
-              class="form-control"
+              className="form-control"
               id="exampleFormControlTextarea1"
               placeholder="Additional Information"
               rows="3"

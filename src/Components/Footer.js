@@ -11,13 +11,13 @@ function Footer(){
           <Col md={12}>
             <h3 className="socialMedia">Find us on Social Media</h3>
             <a href="#">
-              <i class="fa fa-facebook-square fa-3x" id="sm"></i>
+              <i className="fa fa-facebook-square fa-3x" id="sm"></i>
             </a>
             <a href="#">
-              <i class="fa fa-instagram fa-3x" id="sm"></i>
+              <i className="fa fa-instagram fa-3x" id="sm"></i>
             </a>
             <a href="#">
-              <i class="fa fa-twitter-square fa-3x" id="sm"></i>
+              <i className="fa fa-twitter-square fa-3x" id="sm"></i>
             </a>
           </Col>
         </Row>
