@@ -122,7 +122,10 @@ body {
 }
 
 .invisible{
-visibility: hidden;
+display:none
+
+
+
 }
 
 .visible{
@@ -132,3 +135,26 @@ visibility: hidden;
     bottom:10px;
 
 }
+
+.visibleLi{
+    
+    /* text-decoration: none;
+    font-size: 25px;
+    padding: 10px;
+    color: #fff;
+    outline: none;
+    border: none;
+    box-shadow: none;
+   */
+  
+
+}
+/* 
+.visibleLi:hover {
+    text-decoration: none;
+    outline: none;
+    border-bottom: 3px solid #fff;
+    color: #Fff;
+    box-shadow: none; */
+   
+/* } */

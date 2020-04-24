@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../src/Components/style/Images/logo.png";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -12,8 +12,49 @@ import Home from "../src/Components/Home";
 import Contact from "./Components/Contact";
 import Container from "react-bootstrap/Container";
 import UserPortal from "./pages/userPortal";
+import API from "./utils/API";
 
 function Navbar() {
+  const[loggedin, setLoggedin]=useState(
+    "false"
+  )
+  useEffect(()=>{
+    async function getFakeUser(){
+     const fakeuser =  await API.getFakeUser();
+     setUserProfile({...userProfile,name:fakeuser.name})
+    }
+    getFakeUser()
+
+},[loggedin])
+
+//   useEffect( ()=>{
+//     async function getId(){
+       
+//      var data= await API.getUserID();
+//      console.log(data);
+//     if(data.data.user === null){
+//      console.log("loggedon..not")
+//      setLoggedin("false")}
+//     else{
+//      console.log(data)
+//      console.log(loggedin);
+//      setLoggedin("true")
+//     }
+//     }
+//     getId();
+//     }
+// )
+
+const logOut = async function(){
+  var done = await(API.logOut)
+  if(done){console.log("loggedout");
+  setLoggedin("false")}
+  
+}
+
+  
+
+
   var prevScrollpos = window.pageYOffset;
   window.onscroll = function () {
     var currentScrollPos = window.pageYOffset;
@@ -36,13 +77,16 @@ function Navbar() {
             <Link to="/templates">View Templates</Link>
           </li>
           <img src={logo} className="logoImg" alt="Logo" />
-          <li className="margin">
+          <li className={"margin "+(loggedin ===  "false" ? "visible":"invisible")}>
             <Login />
           </li>
-          <li className="margin">
+          <li className={"margin "+(loggedin === "false"? "visible":"invisible")}>
             <Signup />
           </li>
-          <li className="margin">
+          <li className={"margin "+(loggedin=== "false" ? "invisible":"visibleLi")}>
+            <a onClick={logOut}>Log Out</a>
+          </li>
+          <li className={"margin "+(loggedin === "false" ? "invisible":"visible")}>
             <Link to="/userPortal">User Portal</Link>
           </li>
           <li className="margin">

@@ -42,14 +42,15 @@ function Signup() {
   .then((data) => {
     console.log(data)
   localStorage.setItem('token', data.token)
-  API.createUserInfo(newUserInfo)
   setLoggedin(true)
+
 
   // this.history.pushState(null, '/');
   // this.props.history.push("/"); 
-  alert("helo!");
-
-})}
+  alert("helo!");})
+  .then(  API.createUserInfo(newUserInfo)
+)  
+}
 catch(err){
   console.error(err)
 }
