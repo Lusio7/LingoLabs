@@ -1,6 +1,6 @@
 const {Server} = require ("ws");
 
-const wss = new Server({ port :"3002"});
+const wss = new Server({ port :"5000"});
 
 wss.on("connection", function(ws){
     ws.on("message", function(message){

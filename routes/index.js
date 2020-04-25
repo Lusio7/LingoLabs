@@ -59,7 +59,33 @@ router.post('/logout', function(req, res) {
 	res.json({logout:"done"});
   });
   
+  router.post("/moveToPurchased", function(req,res){
+	  var body = req.body;
+	  console.log(body)
+	db.UserInfo
+	.update( 
+	  {username: body.username}, 
+	  { $pull: {shoppingcart:body.id } },
+	
+	
+	db.UserInfo.findOneAndUpdate({username:body.username}, { $push: { purchase: body.id } }, { new: true })
+	.then(()=>{console.log("did switch")}))
+	
 
+	
+	.then(dbMove =>res.json(dbMove))
+	.catch(err=>res.json(err))
+	})
+
+	// router.post("/moveToPurchasedTwo",function(req,res){
+	// 	var body = req.body
+	// 	console.log("------2nd round");
+	// 	user.update(
+	// 		{username:body.username},
+	// 		{$push:{purchase}}
+	// 	)
+	// })
+ 
 
 
 router.get('/api/userInfoByName/:id',(req, res) =>{

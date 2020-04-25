@@ -8,6 +8,11 @@ export default {
     return axios.post("/api/fakeuser")
   },
 
+  moveToPurchase: function(body){
+  console.log("doing the switch");
+  return axios.post("/moveToPurchased",body)
+  },
+
   logOut: function(){
     console.log("loggingout at API");
     return axios.post("/logout")

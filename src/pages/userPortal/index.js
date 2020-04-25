@@ -44,6 +44,20 @@ getUserInformation(userName)}
 
 },[props.name])
 
+const buy = function(event){
+    event.stopPropagation();
+    event.preventDefault();
+
+    var id = event.target.getAttribute("keyValue");
+    var body = {id:id,
+        username:props.name}
+        console.log("======body====");
+        console.log(body);
+    API.moveToPurchase(body);
+    
+    
+}
+
 
 return(
 
@@ -62,7 +76,7 @@ return(
                return (
                    <div>
                <div>{item.itemname} price: {item.price} </div>
-               <button keyValue={item._id}>purchase</button>
+               <button keyValue={item._id} onClick={buy}>purchase</button>
                </div>
                  )})}
                 
