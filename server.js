@@ -4,10 +4,9 @@ const compression = require("compression");
 const mongoose = require('mongoose')
 var session = require("express-session");
 mongoose.set('useCreateIndex', true)
-const passport = require("passport");
-// const passportControl = require('./lib/passport-control');
+// const passport = require("passport");
+const passportControl = require('./lib/passport-control');
 const routes = require("./routes")
-const localstrategy = require("passport-local").Strategy; 
 
 const express = require('express');
 const app = express();
@@ -27,7 +26,7 @@ app.use(
 	session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
   );
   app.use(passportControl.initialize());
-//   app.use(passportControl.session());
+  app.use(passportControl.session());
   
 // Routers
 app.use(routes)

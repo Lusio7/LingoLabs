@@ -18,39 +18,49 @@ function Navbar() {
   const[loggedin, setLoggedin]=useState(
     "false"
   )
-  useEffect(()=>{
-    async function getFakeUser(){
-     const fakeuser =  await API.getFakeUser();
-     setUserProfile({...userProfile,name:fakeuser.name})
-    }
-    getFakeUser()
+//   useEffect(()=>{
+//     async function getFakeUser(){
+//      const fakeuser =  await API.getFakeUser();
+//      setUserProfile({...userProfile,name:fakeuser.name})
+//     }
+//     getFakeUser()
 
-},[loggedin])
+// },[loggedin])
 
-//   useEffect( ()=>{
-//     async function getId(){
+  useEffect( ()=>{
+    async function getId(){
        
-//      var data= await API.getUserID();
-//      console.log(data);
-//     if(data.data.user === null){
-//      console.log("loggedon..not")
-//      setLoggedin("false")}
-//     else{
-//      console.log(data)
-//      console.log(loggedin);
-//      setLoggedin("true")
-//     }
-//     }
-//     getId();
-//     }
-// )
+     var data= await API.getUserID();
+     console.log(data);
+    if(data.data.username === null||!data||data.data.username==="nobody"){
+     console.log("loggedon..not")
+     setLoggedin("false")}
+    else{
+     console.log(data.username)
+     console.log("loggedin");
+     setLoggedin("true")
+    }
+    }
+    getId();
+    }
+)
 
-const logOut = async function(){
-  var done = await(API.logOut)
-  if(done){console.log("loggedout");
-  setLoggedin("false")}
+const logOut = 
+function(){
+  API.logOut();
+  console.log("logout");
+//   event.preventDefault();
+//   event.stopPropagation();
+
+// async function logingOut(){
+
+//   var done = await(API.logOut)
+//   if(done){console.log("loggedout");
+//   setLoggedin("false")}
   
 }
+
+
 
   
 
@@ -70,6 +80,7 @@ const logOut = async function(){
     <Router>
       <Container fluid className="navbar">
         <ul id="nav">
+          
           <li>
             <Link to="/">Home</Link>
           </li>

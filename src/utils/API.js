@@ -6,14 +6,15 @@ export default {
 
   getFakeUser: function(){
     return axios.post("/api/fakeuser")
-  }
+  },
 
   logOut: function(){
-    return axios.post("/api/logout")
+    console.log("loggingout at API");
+    return axios.post("/logout")
   },
 
 getUserID:function(){
-  return axios.get("/api/user")
+  return axios.get("/api/userme")
 },
   
 getRandom : function(){

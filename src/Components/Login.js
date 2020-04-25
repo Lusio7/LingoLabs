@@ -40,8 +40,9 @@ function Login() {
  
       API.login(userlogin)
     .then( (res) => {
-    localStorage.setItem('token', res.data.token)
+    // localStorage.setItem('token', res.data.token)
       setLoggedin(true)
+      console.log(res.data);
     }).catch( (err) => {
       console.error(err)
     })

@@ -11,13 +11,7 @@ function UserPortal(){
     const[loggedin, setLoggedin]=useState(
         "false"
       )
-    useEffect(()=>{
-        async function getFakeUser(){
-         const fakeuser =  await API.getFakeUser();
-         setUserProfile({...userProfile,name:fakeuser.name})
-        }
- 
-    },[loggedin])
+
 
 const[userProfile, setUserProfile]=useState({
     name:"Shawnster",
