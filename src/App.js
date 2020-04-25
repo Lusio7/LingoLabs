@@ -47,17 +47,20 @@ function Navbar() {
 
 const logOut = 
 function(){
-  API.logOut();
-  console.log("logout");
+  // API.logOut();
+  // console.log("logout");
 //   event.preventDefault();
 //   event.stopPropagation();
 
-// async function logingOut(){
+async function logingOut(){
 
-//   var done = await(API.logOut)
-//   if(done){console.log("loggedout");
-//   setLoggedin("false")}
+  var done = await(API.logOut())
+  if(done){console.log("loggedout");
+  setLoggedin("false")}}
+
+  logingOut()
   
+
 }
 
 

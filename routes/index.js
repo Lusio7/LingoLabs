@@ -18,15 +18,8 @@ router.post('/api/signup', (req, res) => {
 	})
 
 	user.save()
-	// .then(() => {
-
-		// Token
-		
-		// const token = jwt.sign({username: user.username}, 'jwt_secret')
-		// res.json({token: token,
-		// 		  username:user.username})
-
-	// })
+	.then((data)=>res.json(data))
+	
 	.catch((err) => {
 		res.status().json({})
 	})
@@ -60,10 +53,10 @@ router.get('/api/userme',
 })
 
 router.post('/logout', function(req, res) {
-	console.log("before logginout");
+	console.log("before")
 	req.logout();
 	console.log("logged out fo real")
-	res.redirect('/');
+	res.json({logout:"done"});
   });
   
 

@@ -15,7 +15,7 @@ function Signup() {
     })
 
     const[loggedin, setLoggedin]=useState(
-      false
+      "false"
     )
   
   
@@ -27,6 +27,7 @@ function Signup() {
   const handleSignUpSubmit =  async function(event){
     
     console.log(newUser);
+    console.log("========")
     // this.props.history.push("/"); 
     // this.history.pushState(null, '/');
 
@@ -39,15 +40,12 @@ function Signup() {
              password:newUser.password};
   try{
   API.signup(newSignup)
-  .then((data) => {
+  .then(function(data){
     console.log(data)
-  localStorage.setItem('token', data.token)
-  setLoggedin(true)
+  setLoggedin("true")
 
 
-  // this.history.pushState(null, '/');
-  // this.props.history.push("/"); 
-  alert("helo!");})
+  alert("helo!")})
   .then(  API.createUserInfo(newUserInfo)
 )  
 }
@@ -121,7 +119,7 @@ catch(err){
                   onClick={handleSignUpSubmit}
                 />
               </form>
-  <div className = {"fadeIn third "+ (loggedin == true ? 'visible':'invisible' )}>Signed Up</div>
+  <div className = {"fadeIn third "+ (loggedin ==="true"? 'visible':'invisible' )}><p>Signed Up</p><a href="/">go back home</a></div>
             </div>
           </div>
         </div>
