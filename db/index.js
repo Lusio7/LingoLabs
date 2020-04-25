@@ -1,5 +1,5 @@
 module.exports = {
-    item: require("./item"),
+    Item: require("./item"),
     User: require("./User"),
     Message:require("./message"),
     UserInfo:require("./userInfo")

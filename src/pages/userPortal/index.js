@@ -6,11 +6,9 @@ import  "./Style.css"
 import Moment from "react-moment";
 
 
-function UserPortal(){
+function UserPortal(props){
+ 
 
-    const[loggedin, setLoggedin]=useState(
-        "false"
-      )
 
 
 const[userProfile, setUserProfile]=useState({
@@ -24,19 +22,35 @@ const[userProfile, setUserProfile]=useState({
     ],
 
     shoppingCart: [{_id:1,  itemname: "crazywebsite", price: 1200.00, date:1587245855919},{_id:2, itemname: "goodwebsite", price: 1250.50, date:1587245855919}
+    ]
+});
+
+async function getUserInformation(name){
+    const LoggedUser = await API.getUserInfo(name)
+    console.log(LoggedUser);
+    if(LoggedUser.data.length>0){
+    setUserProfile( {...userProfile, purchaseHistory : LoggedUser.data[0].purchase, shoppingCart:LoggedUser.data[0].shoppingcart})}
 
     
+}
 
-    ]
+useEffect(()=>{
+var userName=props.name
+console.log("=======username========")
+console.log(userName)
+if(userName !=="noone"){
+getUserInformation(userName)}
 
-});
+
+},[props.name])
+
 
 return(
 
     <div>
         <div className="padding Row"></div>
         <div className="username"> 
-            <p>welcome { userProfile.name} </p>
+            <p>welcome {props.name} </p>
         </div>
         <div className="shoppingcart">
         <h1 className="text-center">Shopping cart: {userProfile.shoppingCart.length} items</h1>

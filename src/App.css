@@ -158,3 +158,10 @@ display:none
     box-shadow: none; */
    
 /* } */
+
+.backToHome{
+
+    color:black;
+    position: relative;
+    bottom:20px;
+}

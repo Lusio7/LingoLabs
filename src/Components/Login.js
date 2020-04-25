@@ -107,7 +107,7 @@ function Login() {
                   onClick={handleSubmit}
                 />
               </form>
-              <div className = {"fadeIn third "+ (loggedin == true ? 'visible':'invisible' )}>logged In<a href="/">go back home</a></div>
+              <div className = {"fadeIn third "+ (loggedin == true ? 'visible':'invisible' )}>logged In<a className="backToHome" href="/">go back home</a></div>
             </div>
           </div>
         </div>

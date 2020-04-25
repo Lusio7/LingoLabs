@@ -119,7 +119,7 @@ catch(err){
                   onClick={handleSignUpSubmit}
                 />
               </form>
-  <div className = {"fadeIn third "+ (loggedin ==="true"? 'visible':'invisible' )}><p>Signed Up</p><a href="/">go back home</a></div>
+  <div className = {"fadeIn third "+ (loggedin ==="true"? 'visible':'invisible' )}><p>Signed Up</p><a className="backToHome" href="/">go back home</a></div>
             </div>
           </div>
         </div>

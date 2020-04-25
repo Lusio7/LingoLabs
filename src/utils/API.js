@@ -22,8 +22,8 @@ return axios.get("/api/random");
 
 },
 
-   getUser : function(userName){
-     return axios.get("/api/userByName")
+   getUserInfo : function(name){
+     return axios.get("/api/userInfoByName/"+name)
 
    },
 

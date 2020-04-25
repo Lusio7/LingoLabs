@@ -5,7 +5,7 @@ const itemSchema = new Schema({
     itemname :{type: String, required: true},
     price:{type:Number, required:true},
     purchasedate:{type:Date, default:Date.now},
-    downloadlink:[],
+    downloadlink:String,
     purchased:{type:Boolean, default:false}
 
      

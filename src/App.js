@@ -18,31 +18,28 @@ function Navbar() {
   const[loggedin, setLoggedin]=useState(
     "false"
   )
-//   useEffect(()=>{
-//     async function getFakeUser(){
-//      const fakeuser =  await API.getFakeUser();
-//      setUserProfile({...userProfile,name:fakeuser.name})
-//     }
-//     getFakeUser()
+const [userName, setUserName]=useState(
+  "noone"
+)
 
-// },[loggedin])
 
   useEffect( ()=>{
     async function getId(){
-       
-     var data= await API.getUserID();
-     console.log(data);
-    if(data.data.username === null||!data||data.data.username==="nobody"){
-     console.log("loggedon..not")
-     setLoggedin("false")}
-    else{
-     console.log(data.username)
-     console.log("loggedin");
-     setLoggedin("true")
-    }
-    }
-    getId();
-    }
+       var data= await API.getUserID();
+      console.log(data);
+       if(data.data.username === null||!data||data.data.username==="nobody")
+       {
+        console.log("loggedon..not")
+        setLoggedin("false")
+      setUserName("nobody")}
+      else{
+        console.log(data.data.username)
+        // console.log("loggedin");
+        setUserName(data.data.username)
+        setLoggedin("true")
+      }}
+      getId();
+      },[loggedin]
 )
 
 const logOut = 
@@ -121,7 +118,7 @@ async function logingOut(){
             <Contact />
           </Route>
           <Route path="/userPortal">
-            <UserPortal />
+            <UserPortal name={userName} />
           </Route>
          
         </Switch>

@@ -62,9 +62,10 @@ router.post('/logout', function(req, res) {
 
 
 
-router.get('/api/userinformation/:id',(req, res) =>{
+router.get('/api/userInfoByName/:id',(req, res) =>{
     var username =req.params.id;
-    db.UserInfo.find({username:username})
+	db.UserInfo.find({username:username})
+	.populate("purchase shoppingcart")
 	.then(dbModel => res.json(dbModel))
 	.catch(err => res.status(422).json(err))
 
@@ -87,3 +88,16 @@ router.post("/api/userinformation",(req,res)=>{
 
 
 module.exports = router
+
+
+// app.get("/allLogged", function(req, res){
+//     db.AllLog.find({})
+//       .populate("strengthexcs enduranceexcs flexibilityexcs balanceexcs")
+//       .then(dbAllLog => {
+//         res.json(dbAllLog);
+//       })
+//       .catch(err => {
+//         res.json(err);
+//       });
+  
+//     });
