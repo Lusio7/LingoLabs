@@ -112,7 +112,7 @@ async function logingOut(){
             <Home />
           </Route>
           <Route path="/templates">
-            <Templates />
+            <Templates user={userName}/>
           </Route>
           <Route path="/contact">
             <Contact />

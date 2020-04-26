@@ -44,7 +44,7 @@ getUserInformation(userName)}
 
 },[props.name])
 
-const buy = function(event){
+const buy = async function(event){
     event.stopPropagation();
     event.preventDefault();
 
@@ -53,7 +53,12 @@ const buy = function(event){
         username:props.name}
         console.log("======body====");
         console.log(body);
-    API.moveToPurchase(body);
+   try{ API.moveToPurchase(body)
+   
+    .then(getUserInformation(props.name)
+   
+    )}
+    catch(err){console.log(err)}
     
     
 }

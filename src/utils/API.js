@@ -3,6 +3,13 @@ import axios from "axios";
 
 
 export default {
+  objectToCart: function(body){
+    console.log("goingtocart")
+    console.log(body)
+    return axios.post("/api/toCart",body);
+
+
+  },
 
   getFakeUser: function(){
     return axios.post("/api/fakeuser")

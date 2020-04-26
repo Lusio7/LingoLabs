@@ -108,7 +108,8 @@ Link {
     box-shadow: none;
     width: 100px;
     position: relative;
-    left: 25%;
+
+    left:35%;
     margin: 10px;
     border-radius: 5px;
     text-align: center;

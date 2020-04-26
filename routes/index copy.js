@@ -1,6 +1,6 @@
 const express = require('express');
 const passport = require('passport');
-const jwt = require('jsonwebtoken');
+// const jwt = require('jsonwebtoken');
 const User = require('../db/User');
 const db=require("../db");
 const router = express.Router()
@@ -66,18 +66,17 @@ router.post('/logout', function(req, res) {
 	.update( 
 	  {username: body.username}, 
 	  { $pull: {shoppingcart:body.id } },
-	
-	
-	db.UserInfo.findOneAndUpdate({username:body.username}, { $push: { purchase: body.id } }, { new: true })
-	.then(()=>{console.log("did switch")}))
+	db.UserInfo.findOneAndUpdate({username:body.username}, { $push: { purchase: body.id } }, { new: true },
+	// db.Item.findByIdAndUpdate({_id:body.id},{purchased:true})
+
+
+  ))
 	
 
 	
 	.then(dbMove =>res.json(dbMove))
 	.catch(err=>res.json(err))
 	})
-
-	
 
 	// router.post("/moveToPurchasedTwo",function(req,res){
 	// 	var body = req.body
@@ -126,7 +125,6 @@ router.post("/api/toCart",(req,res)=>{
 .then(dbModel => res.json(dbModel))
 .catch(err => res.status(422).json(err))
 })
-
 
     
 

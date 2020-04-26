@@ -1,6 +1,8 @@
-import React from "react";
 import "../Components/style/templates.css";
 import { Container, Jumbotron, Row, Col } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import API from "../utils/API"
+
 import $ from "jquery";
 import photo1 from "../Components/style/Images/photo1.png";
 import photo2 from "../Components/style/Images/photo2.png";
@@ -9,7 +11,55 @@ import photo4 from "../Components/style/Images/photo4.png";
 import photo5 from "../Components/style/Images/photo5.png";
 import photo6 from "../Components/style/Images/photo6.png";
 
-function Photo() {
+function Photo(props) {
+
+  var user = props.user
+
+const[ button, setButton]=useState(
+  {
+  one:"Add To Cart",
+  two:"Add To Cart",
+  three:"Add To Cart",
+  four:"Add To Cart",
+  five:"Add To Cart",
+  six:"Add To Cart"
+
+  }
+)
+
+const addToCart =async function(event){
+  event.stopPropagation();
+  event.preventDefault();
+  let name = event.target.getAttribute("name");
+  let link = event.target.getAttribute("src");
+  let price = event.target.getAttribute("price");
+  var idNumber = event.target.getAttribute("number");
+  let body = {
+    username : user,
+    name :name,
+    link : link,
+    price : parseFloat(price),
+    }
+    console.log("=====body for item");
+    console.log(body);
+    console.log(idNumber);
+    
+    var result = await API.objectToCart(body);
+    if(result){
+      setButton({...button, [idNumber]:"added"})
+      setTimeout(() => {
+        setButton({...button, [idNumber]:"Add To Cart",})
+        }, 1000);
+      }
+    }
+
+
+
+
+
+
+
+
   return (
     <div className="main-wrapper" id="photo">
       <Container className="browse_txt">
@@ -29,19 +79,17 @@ function Photo() {
                 Molestiae, officiis! Lorem ipsum dolor sit, amet consectetur
                 adipisicing elit. Perspiciatis, deleniti.
               </p>
-              <button className="button" variant="outline-primary">
-                <a
-                  href="https://project3-2020.github.io/Photography_1/"
-                  target="_blank"
-                  without
-                  rel="noopener noreferrer"
-                >
-                  Demo
-                </a>
+              <button className="button" variant="outline-primary"
+               number = "one"
+               name ="photography website 1"
+               src="https://project3-2020.github.io/Photography_1/"
+               price ="1250.00"
+               onClick={addToCart}> {button.one}
+                
               </button>
-              <button className="button" variant="outline-primary">
+              {/* <button className="button" variant="outline-primary">
                 Download
-              </button>
+              </button> */}
             </div>
           </div>
         </Col>
@@ -56,19 +104,17 @@ function Photo() {
                 Voluptate facere doloribus vel minima earum iure tempora sequi
                 nemo quidem vero.
               </p>
-              <button className="button">
-                <a
-                  href="https://project3-2020.github.io/Photography_2/"
-                  target="_blank"
-                  without
-                  rel="noopener noreferrer"
-                >
-                  Demo
-                </a>
+              <button className="button"
+               number = "two"
+               name ="photography website 2"
+               src="https://project3-2020.github.io/Photography_2/"
+               price ="1250.00"
+               onClick={addToCart}> {button.two}
+              
               </button>
-              <button className="button" variant="outline-primary">
+              {/* <button className="button" variant="outline-primary">
                 Download
-              </button>
+              </button> */}
             </div>
           </div>
         </Col>
@@ -85,19 +131,17 @@ function Photo() {
                 recusandae at dolorum laudantium eveniet perferendis quos
                 aliquid fuga corporis minima.
               </p>
-              <button className="button" variant="outline-primary">
-                <a
-                  href="https://project3-2020.github.io/Photography_3/"
-                  target="_blank"
-                  without
-                  rel="noopener noreferrer"
-                >
-                  Demo
-                </a>
+              <button 
+               className="button" variant="outline-primary"
+              number = "three"
+              name ="photography website 3"
+              src="https://project3-2020.github.io/Photography_3/"
+              price ="1250.00"
+              onClick={addToCart}> {button.three}
               </button>
-              <button className="button" variant="outline-primary">
+              {/* <button className="button" variant="outline-primary">
                 Download
-              </button>
+              </button> */}
             </div>
           </div>
         </Col>
@@ -112,17 +156,15 @@ function Photo() {
                 Aperiam harum atque dolorem iure quasi animi itaque dolor optio
                 ut dignissimos.
               </p>
-              <button className="button">
-                <a
-                  href=" https://project3-2020.github.io/Photography_4/"
-                  target="_blank"
-                  without
-                  rel="noopener noreferrer"
-                >
-                  Demo
-                </a>
+              <button className="button"
+              number = "four"
+              name ="photography website 4"
+              src="https://project3-2020.github.io/Photography_4/"
+              price ="1250.00"
+              onClick={addToCart}> {button.four}
+               
               </button>
-              <button className="button">Download</button>
+              {/* <button className="button">Download</button> */}
             </div>
           </div>
         </Col>
@@ -137,19 +179,16 @@ function Photo() {
                 recusandae at dolorum laudantium eveniet perferendis quos
                 aliquid fuga corporis minima.
               </p>
-              <button className="button" variant="outline-primary">
-                <a
-                  href=" https://project3-2020.github.io/Photography_5/"
-                  target="_blank"
-                  without
-                  rel="noopener noreferrer"
-                >
-                  Demo
-                </a>
+              <button className="button" variant="outline-primary"
+              number = "five"
+              name ="photography website 5"
+              src="https://project3-2020.github.io/Photography_5/"
+              price ="1250.00"
+              onClick={addToCart}> {button.five}
               </button>
-              <button className="button" variant="outline-primary">
+              {/* <button className="button" variant="outline-primary">
                 Download
-              </button>
+              </button> */}
             </div>
           </div>
         </Col>
@@ -164,17 +203,15 @@ function Photo() {
                 Aperiam harum atque dolorem iure quasi animi itaque dolor optio
                 ut dignissimos.
               </p>
-              <button className="button">
-                <a
-                  href="https://project3-2020.github.io/Photography_6/."
-                  target="_blank"
-                  without
-                  rel="noopener noreferrer"
-                >
-                  Demo
-                </a>
+              <button className="button"
+              number = "five"
+              name ="photography website 5"
+              src="https://project3-2020.github.io/Photography_5/"
+              price ="1250.00"
+              onClick={addToCart}> {button.five}
+                
               </button>
-              <button className="button">Download</button>
+              {/* <button className="button">Download</button> */}
             </div>
           </div>
         </Col>
