@@ -11,7 +11,7 @@ export default class Login extends Component {
       loggedin: isAuthenticated()
     }
   }
-
+  // this.submit.bind(this
   submit(e) {
     e.preventDefault()
     e.stopPropagation()
@@ -19,6 +19,7 @@ export default class Login extends Component {
     let form = e.target
     let formData = new FormData(form)
     let params = new URLSearchParams(formData)
+    console.log(params);
 
     fetch('/api/login', {
       method: 'POST',
@@ -47,7 +48,9 @@ export default class Login extends Component {
       return (
         <div class="form-group container">
           <h1>Login</h1>
-          <form onSubmit={this.submit.bind(this)}>
+          <form 
+          onSubmit={this.submit.bind(this)}
+          >
             <div>
               <label>Username: </label>
               <input type="text" class="form-control"  name="username" pattern=".{2,16}" required />

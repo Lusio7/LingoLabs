@@ -9,7 +9,7 @@ var userSchema = new mongoose.Schema({
     unique: true,
     minlength: 2,
     maxlength: 16,
-    lowercase: true,
+    // lowercase: true,
     required: true,
 
   },
@@ -48,3 +48,18 @@ userSchema.methods.login = function(password) {
 
 // Export Mongoose "User" model
 module.exports = mongoose.model('User', userSchema)
+
+
+// User.prototype.validPassword = function(password) {
+//   return bcrypt.compareSync(password, this.password);
+// };
+// before a User is created, we will automatically hash their password
+// User.addHook("beforeCreate", function(user) {
+//   user.password = bcrypt.hashSync(
+//     user.password,
+//     bcrypt.genSaltSync(10),
+//     null
+//   );
+// });
+// return User;
+// };
