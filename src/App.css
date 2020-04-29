@@ -165,3 +165,25 @@ display:none
     position: relative;
     bottom:20px;
 }
+
+.chatbox{
+    position:absolute;
+    right:20px;
+
+    float:right;
+  
+}
+
+.toleft{
+    float:left;
+    border-radius:10px;
+    background-color:lightgray
+
+}
+
+.toright{
+
+float:right;
+border-radius:10px;
+background-color:lightgray
+}

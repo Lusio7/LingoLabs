@@ -108,7 +108,7 @@ return(
                 </div>
             )}
 
-        <Chat />
+        <Chat username={props.name}/>
 </div>
    
 

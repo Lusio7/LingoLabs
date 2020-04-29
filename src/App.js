@@ -65,16 +65,16 @@ async function logingOut(){
   
 
 
-  var prevScrollpos = window.pageYOffset;
-  window.onscroll = function () {
-    var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("nav").style.top = "0";
-    } else {
-      document.getElementById("nav").style.top = "-250px";
-    }
-    prevScrollpos = currentScrollPos;
-  };
+  // var prevScrollpos = window.pageYOffset;
+  // window.onscroll = function () {
+  //   var currentScrollPos = window.pageYOffset;
+  //   if (prevScrollpos > currentScrollPos) {
+  //     document.getElementById("nav").style.top = "0";
+  //   } else {
+  //     document.getElementById("nav").style.top = "-250px";
+  //   }
+  //   prevScrollpos = currentScrollPos;
+  // };
 
   return (
     <Router>
