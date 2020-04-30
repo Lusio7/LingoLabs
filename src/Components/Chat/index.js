@@ -11,7 +11,7 @@ import { set } from "mongoose";
 
 function Chat(props){
 
-const socket = io ("http://localhost:3000",{
+const socket = io ("http://localhost:3001",{
     transports:["websocket","polling"]
 });
 
