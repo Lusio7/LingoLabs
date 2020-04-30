@@ -1,83 +1,130 @@
-import React, { Component } from 'react';
-import axios from 'axios'
-import { Route, Link } from 'react-router-dom'
-// components
-import Signup from './components/sign-up'
-import LoginForm from './components/login-form'
-import Navbar from './components/navbar'
-import Home from './components/home'
+import React, { useEffect, useState } from "react";
+import logo from "../src/Components/style/Images/logo.png";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      loggedIn: false,
-      username: null
-    }
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Templates from "../src/Components/Templates";
+import Signup from "../src/Components/Signup";
+import Login from "../src/Components/Login";
+import Home from "../src/Components/Home";
+import Contact from "./Components/Contact";
+import Container from "react-bootstrap/Container";
+import UserPortal from "./pages/userPortal";
+import API from "./utils/API";
 
-    this.getUser = this.getUser.bind(this)
-    this.componentDidMount = this.componentDidMount.bind(this)
-    this.updateUser = this.updateUser.bind(this)
-  }
+function Navbar() {
+  const[loggedin, setLoggedin]=useState(
+    "false"
+  )
+const [userName, setUserName]=useState(
+  "noone"
+)
 
-  componentDidMount() {
-    this.getUser()
-  }
 
-  updateUser (userObject) {
-    this.setState(userObject)
-  }
+  useEffect( ()=>{
+    async function getId(){
+       var data= await API.getUserID();
+      console.log(data);
+       if(data.data.username === null||!data||data.data.username==="nobody")
+       {
+        console.log("loggedon..not")
+        setLoggedin("false")
+      setUserName("nobody")}
+      else{
+        console.log(data.data.username)
+        // console.log("loggedin");
+        setUserName(data.data.username)
+        setLoggedin("true")
+      }}
+      getId();
+      },[loggedin]
+)
 
-  getUser() {
-    axios.get('/user/').then(response => {
-      console.log('Get user response: ')
-      console.log(response.data)
-      if (response.data.user) {
-        console.log('Get User: There is a user saved in the server session: ')
+const logOut = 
+function(){
+  // API.logOut();
+  // console.log("logout");
+//   event.preventDefault();
+//   event.stopPropagation();
 
-        this.setState({
-          loggedIn: true,
-          username: response.data.user.username
-        })
-      } else {
-        console.log('Get user: no user');
-        this.setState({
-          loggedIn: false,
-          username: null
-        })
-      }
-    })
-  }
+async function logingOut(){
 
-  render() {
-    return (
-      <div className="App">
-   
-        <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-        {/* greet user if logged in: */}
-        {this.state.loggedIn &&
-          <p>Join the party, {this.state.username}!</p>
-        }
-        {/* Routes to different components */}
-        <Route
-          exact path="/"
-          component={Home} />
-        <Route
-          path="/login"
-          render={() =>
-            <LoginForm
-              updateUser={this.updateUser}
-            />}
-        />
-        <Route
-          path="/signup"
-          render={() =>
-            <Signup/>}
-        />
+  var done = await(API.logOut())
+  if(done){console.log("loggedout");
+  setLoggedin("false")}}
 
-      </div>
-    );
-  }
+  logingOut()
+  
+
 }
 
-export default App;
+
+
+  
+
+
+  // var prevScrollpos = window.pageYOffset;
+  // window.onscroll = function () {
+  //   var currentScrollPos = window.pageYOffset;
+  //   if (prevScrollpos > currentScrollPos) {
+  //     document.getElementById("nav").style.top = "0";
+  //   } else {
+  //     document.getElementById("nav").style.top = "-250px";
+  //   }
+  //   prevScrollpos = currentScrollPos;
+  // };
+
+  return (
+    <Router>
+      <Container fluid className="navbar">
+        <ul id="nav">
+          
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/templates">View Templates</Link>
+          </li>
+          <img src={logo} className="logoImg" alt="Logo" />
+          <li className={"margin "+(loggedin ===  "false" ? "visible":"invisible")}>
+            <Login />
+          </li>
+          <li className={"margin "+(loggedin === "false"? "visible":"invisible")}>
+            <Signup />
+          </li>
+          <li className={"margin "+(loggedin=== "false" ? "invisible":"visibleLi")}>
+            <a onClick={logOut}>Log Out</a>
+          </li>
+          <li className={"margin "+(loggedin === "false" ? "invisible":"visible")}>
+            <Link to="/userPortal">User Portal</Link>
+          </li>
+          <li className="margin">
+            <Link to="/contact">Contact Us</Link>
+          </li>
+          
+          
+        </ul>
+
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/templates">
+            <Templates user={userName}/>
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="/userPortal">
+            <UserPortal name={userName} />
+          </Route>
+         
+        </Switch>
+      </Container>
+    </Router>
+  );
+}
+
+export default Navbar;
