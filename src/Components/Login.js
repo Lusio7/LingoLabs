@@ -3,6 +3,8 @@ import "../Components/style/signin.css";
 import { Redirect } from 'react-router-dom'
 import isAuthenticated from '../lib/isAuthenticated'
 import API from "../utils/API"
+import Avatar from 'react-avatar';
+import usersolid from "../Components/style/Images/usersolid.png";
 
 function Login() {
   const [newUser,setNewUser]=useState(
@@ -78,14 +80,15 @@ function Login() {
 
           <div className = {"fadeIn third "+ (loggedin === true ? 'visible':'invisible' )}>
          <center>   
-<h3 className="backhomeurl2">Loggin Success! </h3>
+<h3 className="backhomeurl2">Success! </h3>
 
 <Avatar src={usersolid} />
-</center>
+
 <br></br>
 
-<a id="backhomeurl" className="backToHome" href="/">Return to homepage, click here.</a>
-              </div>
+<a  className="backToHome" href="/"><p id="backhomeurl"> Return to homepage, click here. </p></a>
+</center>        
+  </div>
 
             <div id="formContent">
               <div className="fadeIn first"></div>

@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { /*useEffect,*/ useState } from "react";
 import "../Components/style/signin.css";
-import { Redirect } from 'react-router-dom'
-import isAuthenticated from '../lib/isAuthenticated'
+//import { Redirect } from 'react-router-dom'
+//import isAuthenticated from '../lib/isAuthenticated'
 import "../Components/style/signin.css";
 import API from "../utils/API";
+import Avatar from 'react-avatar';
+import usersolid from "../Components/style/Images/usersolid.png";
+import $ from "jquery";
+
 
 function Signup() {
 
@@ -84,11 +88,11 @@ catch(err){
 
           <div className = {"fadeIn third "+ (loggedin ==="true"? 'visible':'invisible' )}>
           <center>   
-            <p className="backhomeurl4">Signup Success!</p>
+          <h3 className="backhomeurl2">Success! </h3>
           <Avatar src={usersolid} />
           </center>   
 <a className="backToHome" href="/">
-  <h3 class="backhomeurl3">Return to homepage, click here</h3>
+  <h3 id="backhomeurl2">Return to homepage, click here</h3>
   </a>
   </div>
             <div id="formContent">

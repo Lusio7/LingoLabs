@@ -294,32 +294,15 @@ input[type=text]:placeholder {
 
 *:focus {
     outline: none;
-<<<<<<< HEAD
 }
 
-
-
-#backhomeurl2{
-    font-size: 24px !important;
-    color: black !important;
-
+.backhomeurl2{
+    color:black !important;
+    font-size: 32px;
 }
 
-#backhomeurl{
-    font-size: 14px !important;
-    color: black !important;
+#backhomeurl, #backhomeurl2 {
+    font-size: 14px;
+    color:black !important;
 
-    
-}
-
-.backhomeurl3{
-    font-size: 14px !important;
-    color: black !important;
-}
-
-.backhomeurl4{
-    font-size: 24px !important;
-    color: black !important;
-=======
->>>>>>> f7624258bcbe823905d63d2ac27d82b7cc261551
 }

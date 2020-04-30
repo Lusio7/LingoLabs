@@ -6,7 +6,7 @@
   "proxy": "http://localhost:5000/",
   "dependencies": {
     "axios": "^0.19.2",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^4.0.1",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.4.1",
     "compression": "^1.7.4",
@@ -25,6 +25,7 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "react": "^16.8.6",
+    "react-avatar": "^3.9.3",
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
     "react-moment": "^0.9.7",

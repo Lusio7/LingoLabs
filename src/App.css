@@ -136,26 +136,14 @@ display:none
 
 }
 
-.visibleLi{
-    
-    /* text-decoration: none;
-    font-size: 25px;
-    padding: 10px;
-    color: #fff;
-    outline: none;
-    border: none;
-    box-shadow: none;
-   */
-  
-
-}
-/* 
+ 
 .visibleLi:hover {
     text-decoration: none;
     outline: none;
     border-bottom: 3px solid #fff;
     color: #Fff;
-    box-shadow: none; */
+    box-shadow: none; 
+}
    
 /* } */
 
@@ -164,8 +152,6 @@ display:none
     color:black;
     position: relative;
     bottom:20px;
-<<<<<<< HEAD
-=======
 }
 
 .chatbox{
@@ -188,5 +174,4 @@ display:none
 float:right;
 border-radius:10px;
 background-color:lightgray
->>>>>>> f7624258bcbe823905d63d2ac27d82b7cc261551
 }
