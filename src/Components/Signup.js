@@ -1,12 +1,9 @@
-import React, { /*useEffect,*/ useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Components/style/signin.css";
-//import { Redirect } from 'react-router-dom'
-//import isAuthenticated from '../lib/isAuthenticated'
+import { Redirect } from 'react-router-dom'
+import isAuthenticated from '../lib/isAuthenticated'
 import "../Components/style/signin.css";
 import API from "../utils/API";
-import Avatar from 'react-avatar';
-import usersolid from "../Components/style/Images/usersolid.png";
-
 
 function Signup() {
 

@@ -108,7 +108,11 @@ return(
                 </div>
             )}
 
+<<<<<<< HEAD
         <Chat />
+=======
+        <Chat username={props.name}/>
+>>>>>>> f7624258bcbe823905d63d2ac27d82b7cc261551
 </div>
    
 

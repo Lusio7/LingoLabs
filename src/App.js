@@ -65,6 +65,7 @@ async function logingOut(){
   
 
 
+<<<<<<< HEAD
   var prevScrollpos = window.pageYOffset;
   window.onscroll = function () {
     var currentScrollPos = window.pageYOffset;
@@ -75,6 +76,18 @@ async function logingOut(){
     }
     prevScrollpos = currentScrollPos;
   };
+=======
+  // var prevScrollpos = window.pageYOffset;
+  // window.onscroll = function () {
+  //   var currentScrollPos = window.pageYOffset;
+  //   if (prevScrollpos > currentScrollPos) {
+  //     document.getElementById("nav").style.top = "0";
+  //   } else {
+  //     document.getElementById("nav").style.top = "-250px";
+  //   }
+  //   prevScrollpos = currentScrollPos;
+  // };
+>>>>>>> f7624258bcbe823905d63d2ac27d82b7cc261551
 
   return (
     <Router>

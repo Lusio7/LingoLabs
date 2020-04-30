@@ -17,7 +17,12 @@
 
     var socket = new WebSocket ("ws://localhost:3002");
 
+<<<<<<< HEAD
     socket.onopen= function(){
+=======
+    socket.onopen= function()
+    {
+>>>>>>> f7624258bcbe823905d63d2ac27d82b7cc261551
         socket.send(JSON.stringify({
             type:"name",
             data:username

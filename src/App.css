@@ -164,4 +164,29 @@ display:none
     color:black;
     position: relative;
     bottom:20px;
+<<<<<<< HEAD
+=======
+}
+
+.chatbox{
+    position:absolute;
+    right:20px;
+
+    float:right;
+  
+}
+
+.toleft{
+    float:left;
+    border-radius:10px;
+    background-color:lightgray
+
+}
+
+.toright{
+
+float:right;
+border-radius:10px;
+background-color:lightgray
+>>>>>>> f7624258bcbe823905d63d2ac27d82b7cc261551
 }

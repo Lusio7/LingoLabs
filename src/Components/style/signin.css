@@ -294,6 +294,7 @@ input[type=text]:placeholder {
 
 *:focus {
     outline: none;
+<<<<<<< HEAD
 }
 
 
@@ -319,4 +320,6 @@ input[type=text]:placeholder {
 .backhomeurl4{
     font-size: 24px !important;
     color: black !important;
+=======
+>>>>>>> f7624258bcbe823905d63d2ac27d82b7cc261551
 }
