@@ -8,7 +8,8 @@ mongoose.set('useCreateIndex', true)
 const passportControl = require('./lib/passport-control');
 const routes = require("./routes")
 const db= require("./db")
-
+const uri = "mongodb+srv://joey3:rose44@cluster0-ptuvd.gcp.mongodb.net/passport?retryWrites=true";
+const mongodbUri = require("mongodb-uri");
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -46,8 +47,15 @@ app.use(function(req, res, next) {
 
 
 // Run server
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/LingoLabs", { useCreateIndex: true,
-useNewUrlParser: true,useUnifiedTopology: true, useFindAndModify:false},);
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/LingoLabs", { useCreateIndex: true,
+// useNewUrlParser: true,useUnifiedTopology: true, useFindAndModify:false},);
+var mongooseConnectString = mongodbUri.formatMongoose(uri);
+mongoose.connect(mongooseConnectString,  { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+var cluster = mongoose.connection;
+cluster.on('error', console.error.bind(console, 'Connection error: '));
+cluster.once('open', function callback () {
+    console.log('Successfully connected to MongoDB');
+});
 
 db.UserInfo.create({username:"nobody", email:"somethng@smoething.com"},
 function(){db.Item.create({itemname:"Niko Site #1", price:1200.00})
@@ -114,3 +122,5 @@ app.listen(PORT, function() {
 // 		saveUninitialized: false
 // 	})
 // )
+
+// const uri = "mongodb+srv://joey3:rose44@cluster0-ptuvd.gcp.mongodb.net/passport?retryWrites=true";

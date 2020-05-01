@@ -158,6 +158,7 @@ function Templates(props) {
                   number = "three"
                   name="popular website 3"
                     src="https://project3-2020.github.io/Popular_3/"
+            
                     price ="1200.00"
                     onClick={addToCart}> {button.three}
                   
