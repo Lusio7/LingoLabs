@@ -4,7 +4,7 @@ import "../Components/style/templates.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Jumbotron, Row, Col } from "react-bootstrap";
-import $ from "jquery";
+
 import local1 from "../Components/style/Images/local1.png";
 import local2 from "../Components/style/Images/local2.png";
 import local3 from "../Components/style/Images/local3.png";
@@ -12,7 +12,47 @@ import local4 from "../Components/style/Images/local4.png";
 import local5 from "../Components/style/Images/local5.png";
 import local6 from "../Components/style/Images/local6.png";
 
-function Business() {
+import { useEffect, useState } from "react";
+import API from "../utils/API";
+
+function Business(props) {
+  var user = props.user;
+
+  const [button, setButton] = useState({
+    one: "Add To Cart",
+    two: "Add To Cart",
+    three: "Add To Cart",
+    four: "Add To Cart",
+    five: "Add To Cart",
+    six: "Add To Cart",
+  });
+
+  const addToCart = async function (event) {
+    event.stopPropagation();
+    event.preventDefault();
+    let name = event.target.getAttribute("name");
+    let link = event.target.getAttribute("src");
+    let price = event.target.getAttribute("price");
+    var idNumber = event.target.getAttribute("number");
+    let body = {
+      username: user,
+      name: name,
+      link: link,
+      price: parseFloat(price),
+    };
+    console.log("=====body for item");
+    console.log(body);
+    console.log(idNumber);
+
+    var result = await API.objectToCart(body);
+    if (result) {
+      setButton({ ...button, [idNumber]: "added" });
+      setTimeout(() => {
+        setButton({ ...button, [idNumber]: "Add To Cart" });
+      }, 1000);
+    }
+  };
+
   return (
     <div className="main-wrapper" id="business">
       <Container className="browse_txt">
@@ -33,12 +73,26 @@ function Business() {
                 adipisicing elit. Perspiciatis, deleniti.
               </p>
               <button className="button" variant="outline-primary">
-                <a href="" target="_blank" without rel="noopener noreferrer">
+                <a
+                  href="https://project3-2020.github.io/Local_1/"
+                  target="_blank"
+                  without
+                  rel="noopener noreferrer"
+                >
                   Demo
                 </a>
               </button>
-              <button className="button" variant="outline-primary">
-                Checkout
+              <button
+                className="button"
+                variant="outline-primary"
+                number="one"
+                name="Business website 1"
+                src="https://github.com/project3-2020/Local_1.git"
+                price="1250.00"
+                onClick={addToCart}
+              >
+                {" "}
+                {button.one}
               </button>
             </div>
           </div>
@@ -64,8 +118,16 @@ function Business() {
                   Demo
                 </a>
               </button>
-              <button className="button" variant="outline-primary">
-                Checkout
+              <button
+                className="button"
+                number="two"
+                name="Business website 2"
+                src="https://github.com/project3-2020/Local_2.git"
+                price="1250.00"
+                onClick={addToCart}
+              >
+                {" "}
+                {button.two}
               </button>
             </div>
           </div>
@@ -93,8 +155,16 @@ function Business() {
                   Demo
                 </a>
               </button>
-              <button className="button" variant="outline-primary">
-                Checkout
+              <button
+                className="button"
+                variant="outline-primary"
+                number="three"
+                name="Business website 3"
+                src="https://github.com/project3-2020/Local_3.git"
+                price="1250.00"
+                onClick={addToCart}
+              >
+                {button.three}
               </button>
             </div>
           </div>
@@ -120,7 +190,17 @@ function Business() {
                   Demo
                 </a>
               </button>
-              <button className="button">Checkout</button>
+              <button
+                className="button"
+                number="four"
+                name="Business website 4"
+                src="https://github.com/project3-2020/Local_4.git"
+                price="1250.00"
+                onClick={addToCart}
+              >
+                {" "}
+                {button.four}
+              </button>{" "}
             </div>
           </div>
         </Col>
@@ -145,7 +225,18 @@ function Business() {
                   Demo
                 </a>
               </button>
-              <button className="button">Checkout</button>
+              <button
+                className="button"
+                variant="outline-primary"
+                number="five"
+                name="Business website 5"
+                src="https://github.com/project3-2020/Local_5.git"
+                price="1250.00"
+                onClick={addToCart}
+              >
+                {" "}
+                {button.five}
+              </button>{" "}
             </div>
           </div>
         </Col>
@@ -170,7 +261,17 @@ function Business() {
                   Demo
                 </a>
               </button>
-              <button className="button">Checkout</button>
+              <button
+                className="button"
+                number="five"
+                name="Busness website 6"
+                src="https://github.com/project3-2020/Local_6.git"
+                price="1250.00"
+                onClick={addToCart}
+              >
+                {" "}
+                {button.five}
+              </button>{" "}
             </div>
           </div>
         </Col>

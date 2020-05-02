@@ -1,6 +1,8 @@
-import React from "react";
 import "../Components/style/templates.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useEffect, useState } from "react";
+import API from "../utils/API";
+
 import { Container, Jumbotron, Row, Col } from "react-bootstrap";
 import $ from "jquery";
 import popular1 from "../Components/style/Images/popular1.png";
@@ -12,27 +14,70 @@ import popular6 from "../Components/style/Images/popular6.png";
 import Footer from "../Components/Footer";
 import Portfolio from "../Components/Portfolio";
 import Business from "../Components/Business";
-import Restaurant from "../Components/Restaurant";
+import Restaurant from "./Restaurant";
+
 import Estate from "../Components/Estate";
 
 import Photo from "../Components/Photo";
+import { set } from "mongoose";
 
-function Templates() {
+function Templates(props) {
+  var user = props.user;
+
+  const [button, setButton] = useState({
+    one: "Add To Cart",
+    two: "Add To Cart",
+    three: "Add To Cart",
+    four: "Add To Cart",
+    five: "Add To Cart",
+    six: "Add To Cart",
+  });
+
+  const addToCart = async function (event) {
+    event.stopPropagation();
+    event.preventDefault();
+    let name = event.target.getAttribute("name");
+    let link = event.target.getAttribute("src");
+    let price = event.target.getAttribute("price");
+    var idNumber = event.target.getAttribute("number");
+    let body = {
+      username: user,
+      name: name,
+      link: link,
+      price: parseFloat(price),
+    };
+    console.log("=====body for item");
+    console.log(body);
+    console.log(idNumber);
+
+    var result = await API.objectToCart(body);
+    if (result) {
+      setButton({ ...button, [idNumber]: "added" });
+      setTimeout(() => {
+        setButton({ ...button, [idNumber]: "Add To Cart" });
+      }, 1000);
+    }
+  };
+
   return (
     <Container fluid className="mainTemp">
       <Jumbotron fluid id="bcgTemp">
         <Container className="temp1">
-          <h1 className="tempTitle">Starting points for your Website.</h1>
+          <h1 className="tempTitle">
+            Welcome to LingoLabs Website <br /> Template Repository!
+          </h1>
           <p className="text1">
-            Get started with any of our best-in-class website templates, whether
-            it's contact forms or color palettes. Making a beautiful website has
-            never been faster.
+            Browse our beautifully designed and industry leading website
+            templates. Each of them has been meticulously curated to fit varying
+            industries and businesses. You have the power to simply with the
+            click of a few buttons, instantaneously download a website that will
+            help you attain your business goals and meet your customers’ needs!
           </p>
         </Container>
       </Jumbotron>
 
       <Container fluid className="main_content">
-        <div class="tab">
+        <div className="tab">
           <button className="tablinks1">
             <a
               href="#popular-title"
@@ -116,8 +161,16 @@ function Templates() {
                       Demo
                     </a>
                   </button>
-                  <button className="button" variant="outline-primary">
-                    Checkout
+                  <button
+                    className="button"
+                    variant="outline-primary"
+                    number="one"
+                    name="popular website 1"
+                    src=" https://github.com/project3-2020/Popular_1.git"
+                    price="1200.00"
+                    onClick={addToCart}
+                  >
+                    {button.one}
                   </button>
                 </div>
               </div>
@@ -143,8 +196,15 @@ function Templates() {
                       Demo
                     </a>
                   </button>
-                  <button className="button" variant="outline-primary">
-                    Checkout
+                  <button
+                    className="button"
+                    number="two"
+                    name="popular website 2"
+                    src="https://github.com/project3-2020/Popular_2.git"
+                    price="1200.00"
+                    onClick={addToCart}
+                  >
+                    {button.two}
                   </button>
                 </div>
               </div>
@@ -172,8 +232,16 @@ function Templates() {
                       Demo
                     </a>
                   </button>
-                  <button className="button" variant="outline-primary">
-                    Checkout
+                  <button
+                    className="button"
+                    variant="outline-primary"
+                    number="three"
+                    name="popular website 3"
+                    src="https://github.com/project3-2020/Popular_3.git"
+                    price="1200.00"
+                    onClick={addToCart}
+                  >
+                    {button.three}
                   </button>
                 </div>
               </div>
@@ -199,7 +267,17 @@ function Templates() {
                       Demo
                     </a>
                   </button>
-                  <button className="button">Checkout</button>
+                  <button
+                    className="button"
+                    number="four"
+                    name="popular website 4"
+                    src="https://github.com/project3-2020/Popular_4.git"
+                    price="1200.00"
+                    onClick={addToCart}
+                  >
+                    {" "}
+                    {button.four}
+                  </button>
                 </div>
               </div>
             </Col>
@@ -224,7 +302,17 @@ function Templates() {
                       Demo
                     </a>
                   </button>
-                  <button className="button">Checkout</button>
+                  <button
+                    className="button"
+                    number="five"
+                    name="popular website 5"
+                    src="https://github.com/project3-2020/Popular_5.git"
+                    price="1200.00"
+                    onClick={addToCart}
+                  >
+                    {" "}
+                    {button.five}
+                  </button>
                 </div>
               </div>
             </Col>
@@ -249,14 +337,24 @@ function Templates() {
                       Demo
                     </a>
                   </button>
-                  <button className="button">Checkout</button>
+                  <button
+                    className="button"
+                    number="six"
+                    name="popular website 6"
+                    src="https://github.com/project3-2020/Popular_6.git"
+                    price="1200.00"
+                    onClick={addToCart}
+                  >
+                    {" "}
+                    {button.six}
+                  </button>
                 </div>
               </div>
             </Col>
           </Row>
         </div>
 
-        <Photo />
+        <Photo user={props.user} addToCart={addToCart} />
         <Portfolio />
         <Business />
         <Restaurant />

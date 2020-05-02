@@ -1,0 +1,63 @@
+<html>
+<head>
+
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<link rel = "stylesheet" href="./src/index.css"
+
+<body>
+    <input type="text" placeholder = "your message" id="text">
+    <div id = "log" style="background-color:white ; border:1px solid black; width:80%; height: 100px;"></div>
+    <button>send</button>
+    
+<script>
+        var username = prompt("name?");
+ 
+
+    var socket = new WebSocket ("ws://localhost:3002");
+
+    socket.onopen= function()
+    {
+        socket.send(JSON.stringify({
+            type:"name",
+            data:username
+        }))
+    }
+    var log = document.getElementById("log")
+    // socket.onopen = function(event){
+    //     alert("socket connected succesfully");
+    //  };
+    socket.onmessage = function(event){
+        console.log(event);
+        var json = JSON.parse(event.data);
+        log.innerHTML+= json.name + " : " + json.data + "<br>" ;
+    }
+    document.querySelector('button').onclick = function(event){
+     var text = document.getElementById("text").value;
+    //  socket.send(text);
+    socket.send(JSON.stringify({
+        type:"message",
+        data:text
+    }))
+     
+     log.innerHTML+= "you :" + text + "<br>" ;
+    }
+    socket.onclose
+
+    socket.onerror
+
+   
+    
+
+    
+
+
+</script>
+
+
+</body>
+
+
+
+</html>

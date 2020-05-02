@@ -7,13 +7,16 @@ function Contact() {
   return (
     <Container fluid id="contact">
       <Row>
-        <Col>
+        <Col className="ni">
           <h2 className="contact">CONTACT US!</h2>
           <p className="chat">
             <br />
             You get a premium look on your website without struggling to create
             it <br /> Let's chat!
           </p>
+        </Col>
+
+        <Col className="ni2">
           <form>
             <div className="form-row">
               <div className="col">
@@ -48,10 +51,10 @@ function Contact() {
               </div>
             </div>
           </form>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1"></label>
+          <div className="form-group">
+            <label htmlFor="exampleFormControlTextarea1"></label>
             <textarea
-              class="form-control"
+              className="form-control"
               id="exampleFormControlTextarea1"
               placeholder="Additional Information"
               rows="3"

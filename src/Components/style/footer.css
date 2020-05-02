@@ -10,33 +10,35 @@ body {
 .footer {
     display: inline-block;
     margin-top: 100px;
-    background-color: #1A1A1A;
     justify-content: space-around;
     border-radius: 10px;
     padding: 20px;
     font-family: 'Oswald', sans-serif;
+    color:#1A1A1A;
+    border-top: 10px solid #1A1A1A;
 }
 
 .socialMedia {
-    color: #fff;
+    border-radius: 50%;
     margin-left: 20px;
 }
 
 #sm {
+    border-radius: 50%;
     transition: transform .2s;
-    background-color: #1A1A1A;
-    color: #5F2927;
+    color:#1A1A1A;
+    
     padding: 10px;
     margin-left: 20px;
 }
 
 #sm:hover {
     transform: scale(1.2);
-    color: #fff;
+   
 }
 
 address {
-    color: #fff;
+ 
     position: relative;
     left: 50%;
     margin-top: 10px;
@@ -46,6 +48,6 @@ address {
 .copy {
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
-    color:#fff;
+  
     text-align: center;
 }

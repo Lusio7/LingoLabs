@@ -1,6 +1,8 @@
-import React from "react";
 import "../Components/style/templates.css";
 import { Container, Jumbotron, Row, Col } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import API from "../utils/API";
+
 import $ from "jquery";
 import photo1 from "../Components/style/Images/photo1.png";
 import photo2 from "../Components/style/Images/photo2.png";
@@ -9,12 +11,49 @@ import photo4 from "../Components/style/Images/photo4.png";
 import photo5 from "../Components/style/Images/photo5.png";
 import photo6 from "../Components/style/Images/photo6.png";
 
-function Photo() {
+function Photo(props) {
+  var user = props.user;
+
+  const [button, setButton] = useState({
+    one: "Add To Cart",
+    two: "Add To Cart",
+    three: "Add To Cart",
+    four: "Add To Cart",
+    five: "Add To Cart",
+    six: "Add To Cart",
+  });
+
+  const addToCart = async function (event) {
+    event.stopPropagation();
+    event.preventDefault();
+    let name = event.target.getAttribute("name");
+    let link = event.target.getAttribute("src");
+    let price = event.target.getAttribute("price");
+    var idNumber = event.target.getAttribute("number");
+    let body = {
+      username: user,
+      name: name,
+      link: link,
+      price: parseFloat(price),
+    };
+    console.log("=====body for item");
+    console.log(body);
+    console.log(idNumber);
+
+    var result = await API.objectToCart(body);
+    if (result) {
+      setButton({ ...button, [idNumber]: "added" });
+      setTimeout(() => {
+        setButton({ ...button, [idNumber]: "Add To Cart" });
+      }, 1000);
+    }
+  };
+
   return (
     <div className="main-wrapper" id="photo">
       <Container className="browse_txt">
         <h1 className="browse_title" id="photo-title">
-          Photography
+          Photography Templates
         </h1>
       </Container>
       <Row>
@@ -39,9 +78,21 @@ function Photo() {
                   Demo
                 </a>
               </button>
-              <button className="button" variant="outline-primary">
-                Checkout
+              <button
+                className="button"
+                variant="outline-primary"
+                number="one"
+                name="photography website 1"
+                src="https://github.com/project3-2020/Photography_1.git"
+                price="1250.00"
+                onClick={addToCart}
+              >
+                {" "}
+                {button.one}
               </button>
+              {/* <button className="button" variant="outline-primary">
+                Download
+              </button> */}
             </div>
           </div>
         </Col>
@@ -66,9 +117,20 @@ function Photo() {
                   Demo
                 </a>
               </button>
-              <button className="button" variant="outline-primary">
-                Checkout
+              <button
+                className="button"
+                number="two"
+                name="photography website 2"
+                src="https://github.com/project3-2020/Photography_2.git"
+                price="1250.00"
+                onClick={addToCart}
+              >
+                {" "}
+                {button.two}
               </button>
+              {/* <button className="button" variant="outline-primary">
+                Download
+              </button> */}
             </div>
           </div>
         </Col>
@@ -95,9 +157,20 @@ function Photo() {
                   Demo
                 </a>
               </button>
-              <button className="button" variant="outline-primary">
-                Checkout
+              <button
+                className="button"
+                variant="outline-primary"
+                number="three"
+                name="photography website 3"
+                src="https://github.com/project3-2020/Photography_3.git"
+                price="1250.00"
+                onClick={addToCart}
+              >
+                {button.three}
               </button>
+              {/* <button className="button" variant="outline-primary">
+                Download
+              </button> */}
             </div>
           </div>
         </Col>
@@ -122,7 +195,18 @@ function Photo() {
                   Demo
                 </a>
               </button>
-              <button className="button">Checkout</button>
+              <button
+                className="button"
+                number="four"
+                name="photography website 4"
+                src="https://github.com/project3-2020/Photography_4.git"
+                price="1250.00"
+                onClick={addToCart}
+              >
+                {" "}
+                {button.four}
+              </button>
+              {/* <button className="button">Download</button> */}
             </div>
           </div>
         </Col>
@@ -147,9 +231,21 @@ function Photo() {
                   Demo
                 </a>
               </button>
-              <button className="button" variant="outline-primary">
-                Checkout
+              <button
+                className="button"
+                variant="outline-primary"
+                number="five"
+                name="photography website 5"
+                src="https://github.com/project3-2020/Photography_5.git"
+                price="1250.00"
+                onClick={addToCart}
+              >
+                {" "}
+                {button.five}
               </button>
+              {/* <button className="button" variant="outline-primary">
+                Download
+              </button> */}
             </div>
           </div>
         </Col>
@@ -174,7 +270,18 @@ function Photo() {
                   Demo
                 </a>
               </button>
-              <button className="button">Checkout</button>
+              <button
+                className="button"
+                number="five"
+                name="photography website 6"
+                src="https://github.com/project3-2020/Photography_6.git"
+                price="1250.00"
+                onClick={addToCart}
+              >
+                {" "}
+                {button.five}
+              </button>
+              {/* <button className="button">Download</button> */}
             </div>
           </div>
         </Col>

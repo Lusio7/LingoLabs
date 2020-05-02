@@ -7,7 +7,43 @@ import $ from "jquery";
 import estate1 from "../Components/style/Images/estate1.png";
 import estate2 from "../Components/style/Images/estate2.png";
 
-function Estate() {
+import { useEffect, useState } from "react";
+import API from "../utils/API";
+
+function Estate(props) {
+  var user = props.user;
+
+  const [button, setButton] = useState({
+    one: "Add To Cart",
+    two: "Add To Cart",
+  });
+
+  const addToCart = async function (event) {
+    event.stopPropagation();
+    event.preventDefault();
+    let name = event.target.getAttribute("name");
+    let link = event.target.getAttribute("src");
+    let price = event.target.getAttribute("price");
+    var idNumber = event.target.getAttribute("number");
+    let body = {
+      username: user,
+      name: name,
+      link: link,
+      price: parseFloat(price),
+    };
+    console.log("=====body for item");
+    console.log(body);
+    console.log(idNumber);
+
+    var result = await API.objectToCart(body);
+    if (result) {
+      setButton({ ...button, [idNumber]: "added" });
+      setTimeout(() => {
+        setButton({ ...button, [idNumber]: "Add To Cart" });
+      }, 1000);
+    }
+  };
+
   return (
     <div className="main-wrapper" id="estate">
       <Container className="browse_txt">
@@ -37,8 +73,17 @@ function Estate() {
                   Demo
                 </a>
               </button>
-              <button className="button" variant="outline-primary">
-                Checkout
+              <button
+                className="button"
+                variant="outline-primary"
+                number="one"
+                name="Real Estate website 1"
+                src="https://github.com/project3-2020/Real_Estate_1.git"
+                price="1250.00"
+                onClick={addToCart}
+              >
+                {" "}
+                {button.one}
               </button>
             </div>
           </div>
@@ -64,8 +109,17 @@ function Estate() {
                   Demo
                 </a>
               </button>
-              <button className="button" variant="outline-primary">
-                Checkout
+              <button
+                className="button"
+                variant="outline-primary"
+                number="one"
+                name="Real Estate website 2"
+                src="https://github.com/project3-2020/Real_Estate_2.git"
+                price="1250.00"
+                onClick={addToCart}
+              >
+                {" "}
+                {button.two}
               </button>
             </div>
           </div>

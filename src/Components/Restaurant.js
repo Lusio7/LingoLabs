@@ -7,7 +7,43 @@ import $ from "jquery";
 import rest1 from "../Components/style/Images/rest1.png";
 import rest2 from "../Components/style/Images/rest2.png";
 
-function Restaurant() {
+import { useEffect, useState } from "react";
+import API from "../utils/API";
+
+function Restaurant(props) {
+  var user = props.user;
+
+  const [button, setButton] = useState({
+    one: "Add To Cart",
+    two: "Add To Cart",
+  });
+
+  const addToCart = async function (event) {
+    event.stopPropagation();
+    event.preventDefault();
+    let name = event.target.getAttribute("name");
+    let link = event.target.getAttribute("src");
+    let price = event.target.getAttribute("price");
+    var idNumber = event.target.getAttribute("number");
+    let body = {
+      username: user,
+      name: name,
+      link: link,
+      price: parseFloat(price),
+    };
+    console.log("=====body for item");
+    console.log(body);
+    console.log(idNumber);
+
+    var result = await API.objectToCart(body);
+    if (result) {
+      setButton({ ...button, [idNumber]: "added" });
+      setTimeout(() => {
+        setButton({ ...button, [idNumber]: "Add To Cart" });
+      }, 1000);
+    }
+  };
+
   return (
     <div className="main-wrapper" id="restaurant">
       <Container className="browse_txt">
@@ -37,8 +73,17 @@ function Restaurant() {
                   Demo
                 </a>
               </button>
-              <button className="button" variant="outline-primary">
-                Checkout
+              <button
+                className="button"
+                variant="outline-primary"
+                number="one"
+                name="Restaurant website 1"
+                src="https://github.com/project3-2020/Restaurant_1.git"
+                price="1250.00"
+                onClick={addToCart}
+              >
+                {" "}
+                {button.one}
               </button>
             </div>
           </div>
@@ -64,8 +109,17 @@ function Restaurant() {
                   Demo
                 </a>
               </button>
-              <button className="button" variant="outline-primary">
-                Checkout
+              <button
+                className="button"
+                variant="outline-primary"
+                number="one"
+                name="Restaurant website 2"
+                src="https://github.com/project3-2020/Restaurant_2.git"
+                price="1250.00"
+                onClick={addToCart}
+              >
+                {" "}
+                {button.two}
               </button>
             </div>
           </div>
