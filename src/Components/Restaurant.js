@@ -78,7 +78,7 @@ function Restaurant(props) {
                 variant="outline-primary"
                 number="one"
                 name="Restaurant website 1"
-                src="https://github.com/project3-2020/Restaurant_1.git"
+                src="https://github.com/project3-2020/Restaurant_1/archive/master.zip"
                 price="1250.00"
                 onClick={addToCart}
               >
@@ -114,7 +114,7 @@ function Restaurant(props) {
                 variant="outline-primary"
                 number="one"
                 name="Restaurant website 2"
-                src="https://github.com/project3-2020/Restaurant_2.git"
+                src="https://github.com/project3-2020/Restaurant_2/archive/master.zip"
                 price="1250.00"
                 onClick={addToCart}
               >

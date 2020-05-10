@@ -87,7 +87,7 @@ function Business(props) {
                 variant="outline-primary"
                 number="one"
                 name="Business website 1"
-                src="https://github.com/project3-2020/Local_1.git"
+                src="https://github.com/project3-2020/Local_1/archive/master.zip"
                 price="1250.00"
                 onClick={addToCart}
               >
@@ -122,7 +122,7 @@ function Business(props) {
                 className="button"
                 number="two"
                 name="Business website 2"
-                src="https://github.com/project3-2020/Local_2.git"
+                src="https://github.com/project3-2020/Local_2/archive/master.zip"
                 price="1250.00"
                 onClick={addToCart}
               >
@@ -160,7 +160,7 @@ function Business(props) {
                 variant="outline-primary"
                 number="three"
                 name="Business website 3"
-                src="https://github.com/project3-2020/Local_3.git"
+                src="https://github.com/project3-2020/Local_3/archive/master.zip"
                 price="1250.00"
                 onClick={addToCart}
               >
@@ -194,7 +194,7 @@ function Business(props) {
                 className="button"
                 number="four"
                 name="Business website 4"
-                src="https://github.com/project3-2020/Local_4.git"
+                src="https://github.com/project3-2020/Local_4/archive/master.zip"
                 price="1250.00"
                 onClick={addToCart}
               >
@@ -230,7 +230,7 @@ function Business(props) {
                 variant="outline-primary"
                 number="five"
                 name="Business website 5"
-                src="https://github.com/project3-2020/Local_5.git"
+                src="https://github.com/project3-2020/Local_5/archive/master.zip"
                 price="1250.00"
                 onClick={addToCart}
               >
@@ -265,7 +265,7 @@ function Business(props) {
                 className="button"
                 number="five"
                 name="Busness website 6"
-                src="https://github.com/project3-2020/Local_6.git"
+                src="https://github.com/project3-2020/Local_6/archive/master.zip"
                 price="1250.00"
                 onClick={addToCart}
               >

@@ -78,7 +78,7 @@ function Estate(props) {
                 variant="outline-primary"
                 number="one"
                 name="Real Estate website 1"
-                src="https://github.com/project3-2020/Real_Estate_1.git"
+                src="https://github.com/project3-2020/Real_Estate_1/archive/master.zip"
                 price="1250.00"
                 onClick={addToCart}
               >
@@ -114,7 +114,7 @@ function Estate(props) {
                 variant="outline-primary"
                 number="one"
                 name="Real Estate website 2"
-                src="https://github.com/project3-2020/Real_Estate_2.git"
+                src="https://github.com/project3-2020/Real_Estate_2/archive/master.zip"
                 price="1250.00"
                 onClick={addToCart}
               >

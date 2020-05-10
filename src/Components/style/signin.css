@@ -54,7 +54,6 @@ h2 {
     color: #cccccc;
 }
 
-
 /* STRUCTURE */
 
 .wrapper {
@@ -68,7 +67,6 @@ h2 {
 }
 
 #formContent {
-    
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
     background: #fff;
@@ -81,8 +79,6 @@ h2 {
     box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
     text-align: center;
 }
-
-
 
 /* TABS */
 
@@ -99,7 +95,6 @@ h2.active {
 
 input[type=button], input[type=submit], input[type=reset] {
     background-color: #56baed;
- 
     color: white;
     padding: 15px 80px;
     text-align: center;
@@ -118,8 +113,6 @@ input[type=button], input[type=submit], input[type=reset] {
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
-
-
 
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
     background-color: #39ace7;
@@ -168,7 +161,6 @@ input[type=text]:placeholder {
 /* Simple CSS3 Fade-in-down Animation */
 
 .fadeInDown {
-    
     -webkit-animation-name: fadeInDown;
     animation-name: fadeInDown;
     -webkit-animation-duration: 1s;
@@ -249,6 +241,8 @@ input[type=text]:placeholder {
     -webkit-animation-delay: 0.4s;
     -moz-animation-delay: 0.4s;
     animation-delay: 0.4s;
+    position: relative;
+    left: -10%;
 }
 
 .fadeIn.second {
@@ -295,3 +289,12 @@ input[type=text]:placeholder {
 *:focus {
     outline: none;
 }
+
+.third{
+    color:red;
+}
+
+#login{
+   
+}
+

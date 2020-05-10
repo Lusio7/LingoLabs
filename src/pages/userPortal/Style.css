@@ -1,4 +1,134 @@
-.padding{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    height:120px;
+.portal {
+    min-width: 100vw;
+    min-height: 100vh;
+    background: url("./img/Header_inicial.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -128px;
+    position: relative;
+    left: -2.5%;
+    font-weight: bolder;
+}
+
+.emptines {
+    margin-left: 80px;
+}
+
+.prevHistory {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.hr {
+    background-color: #000;
+    min-width: 26vw;
+}
+
+.hr2 {
+    background-color: #000;
+    max-width: 36vw;
+    position: relative;
+    left: -10%;
+    margin-bottom: 40px;
+}
+
+.wrap {
+    position: relative;
+    left: 0.5%;
+    margin-top: -150px;
+}
+
+.noBuy-title {
+    margin-left: 60px;
+}
+
+.second-wrap {
+    background-image: url("./img/design.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 40px;
+    position: relative;
+    left: 1%;
+    overflow: hidden;
+}
+
+/* first col */
+
+.first {
+    margin: 0 auto;
+    min-width: 40vw;
+}
+
+.buy-title {
+    margin-top: 20px;
+    position: relative;
+    left: 14%;
+}
+
+.welcome {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.welcome-msg {
+    margin: 0 auto;
+    font-weight: 900;
+}
+
+.cart-title {
+    margin-left: 80px;
+}
+
+.target-wrap {
+    position: relative;
+    left: 13%;
+}
+
+/* buttons */
+
+.down {
+    color: #000;
+    outline: none;
+    font-size: 20px;
+    transition: transform 0.2s;
+}
+
+.down:hover {
+    transform: scale(1.1);
+    color: red;
+    text-decoration: none;
+}
+
+.span {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.buybtn {
+    padding: 3px 8px;
+    border-radius: 8px;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    outline: none;
+    transition: transform 0.2s;
+}
+
+.buybtn:hover {
+    transform: scale(1.1);
+    background-color: #fff;
+    color: #000;
+    outline: none;
+    box-shadow: 3px black;
 }

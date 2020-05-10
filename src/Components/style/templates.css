@@ -12,7 +12,7 @@ Link {
     position: relative;
     left: -4%;
     min-width: 100vw;
-    margin-top: -8px;
+    margin-top: -128px;
 }
 
 #bcgTemp {
@@ -90,11 +90,10 @@ Link {
     opacity: 0;
     transition: .5s ease;
     border-radius: 5px;
-    background-color: #FAFAFA;
-     color: #000000;
+    background-color: #9BA5BE;
+    color: #000000;
     -webkit-box-shadow: 0px 0px 5px 0px #000000;
     box-shadow: 0px 0px 5px 0px #000000;
-    
 }
 
 .temp_container:hover .overlay {
@@ -102,6 +101,7 @@ Link {
 }
 
 .button {
+    padding: 3px 8px;
     box-shadow: none;
     width: 100px;
     position: relative;
@@ -114,7 +114,10 @@ Link {
     border: 1px solid black;
     box-shadow: 0px 0px 5px 0px black;
     transition: transform .2s;
+}
 
+.button {
+    text-decoration: none;
 }
 
 .button:hover {

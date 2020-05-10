@@ -9,18 +9,19 @@
 .big {
     position: relative;
     left: 4%;
+    opacity: 85%;
+    margin-top: -128px;
 }
 
-.test{
-min-width: 35vw;
+.test {
+    min-width: 35vw;
 }
 
 .title {
     font-size: 50px;
-    margin-top: 250px;
+    margin-top: 120px;
     font-family: 'Oswald', sans-serif;
     font-weight: bolder;
-
 }
 
 .subTitle {

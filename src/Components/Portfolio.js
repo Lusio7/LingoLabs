@@ -81,7 +81,7 @@ function Portfolio(props) {
                 variant="outline-primary"
                 number="one"
                 name="Portfolio website 1"
-                src="https://github.com/project3-2020/Portfolio_1.git"
+                src="https://github.com/project3-2020/Portfolio_1/archive/master.zip"
                 price="1250.00"
                 onClick={addToCart}
               >
@@ -117,7 +117,7 @@ function Portfolio(props) {
                 variant="outline-primary"
                 number="one"
                 name="Portfolio website 2"
-                src="https://github.com/project3-2020/Portfolio_2.git"
+                src="https://github.com/project3-2020/Portfolio_2/archive/master.zip"
                 price="1250.00"
                 onClick={addToCart}
               >
@@ -155,7 +155,7 @@ function Portfolio(props) {
                 variant="outline-primary"
                 number="one"
                 name="Portfolio website 3"
-                src="https://github.com/project3-2020/Portfolio_3.git"
+                src="https://github.com/project3-2020/Portfolio_3/archive/master.zip"
                 price="1250.00"
                 onClick={addToCart}
               >
@@ -191,7 +191,7 @@ function Portfolio(props) {
                 variant="outline-primary"
                 number="one"
                 name="Portfolio website 4"
-                src="https://github.com/project3-2020/Portfolio_4.git"
+                src="https://github.com/project3-2020/Portfolio_4/archive/master.zip"
                 price="1250.00"
                 onClick={addToCart}
               >

@@ -1,28 +1,23 @@
 import React, { useEffect, useState } from "react";
 import "../Components/style/signin.css";
-import { Redirect } from 'react-router-dom'
-import isAuthenticated from '../lib/isAuthenticated'
-import API from "../utils/API"
+import { Redirect } from "react-router-dom";
+import isAuthenticated from "../lib/isAuthenticated";
+import API from "../utils/API";
 
 function Login() {
-  const [newUser,setNewUser]=useState(
-    {username:"",
-    password:"",
+  const [newUser, setNewUser] = useState({ username: "", password: "" });
 
-    })
+  // const random = function(){
+  //   API.getRandom()
+  // }
 
-    // const random = function(){
-    //   API.getRandom()
-    // }
-  
-  const[loggedin, setLoggedin]=useState(
-    false
-  )
+  const [loggedin, setLoggedin] = useState(false);
 
-  const handleInputChange = function(event) {
+  const handleInputChange = function (event) {
     const { name, value } = event.target;
     console.log(name, value);
-    setNewUser({...newUser, [name]: value})};
+    setNewUser({ ...newUser, [name]: value });
+  };
   // submit.bind()
   // useEffect(() => {
   //   if(loggedin == true){
@@ -30,40 +25,33 @@ function Login() {
 
   //   }},loggedin)
 
-  var handleSubmit= function(e){
-    e.preventDefault()
-    e.stopPropagation()
-    var userlogin={username:newUser.username,
-    password:newUser.password}
+  var handleSubmit = function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var userlogin = { username: newUser.username, password: newUser.password };
     console.log(userlogin);
-    
- 
-      API.login(userlogin)
-    .then( (res) => {
-    // localStorage.setItem('token', res.data.token)
-      setLoggedin(true)
-      console.log(res.data);
-    }).catch( (err) => {
-      console.error(err)
-    })
-  }
 
-  
+    API.login(userlogin)
+      .then((res) => {
+        // localStorage.setItem('token', res.data.token)
+        setLoggedin(true);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
 
-  
-
-
-    
-      // if (loggedin == true ) {
-      //   return (
-      //     <Redirect
-      //       to={{
-      //         pathname: '/',
-      //         state: { from: this.props.location }
-      //       }}
-      //     />
-      //   )}
-        return (
+  // if (loggedin == true ) {
+  //   return (
+  //     <Redirect
+  //       to={{
+  //         pathname: '/',
+  //         state: { from: this.props.location }
+  //       }}
+  //     />
+  //   )}
+  return (
     <div className="m">
       <a href="#openModal" className="nav-links">
         LogIn
@@ -97,7 +85,6 @@ function Login() {
                   name="password"
                   placeholder="password"
                   onChange={handleInputChange}
-
                 />
                 <input
                   type="submit"
@@ -107,7 +94,18 @@ function Login() {
                   onClick={handleSubmit}
                 />
               </form>
-              <div className = {"fadeIn third "+ (loggedin == true ? 'visible':'invisible' )}>logged In<a className="backToHome" href="/">go back home</a></div>
+              <div
+                className={
+                  "fadeIn third " + (loggedin == true ? "visible" : "invisible")
+                }
+              >
+                Successfully Logged In
+                <br />
+                <br />
+                <a className="backToHome" href="/userPortal">
+                  User Portal
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -115,12 +113,8 @@ function Login() {
     </div>
   );
 }
-  
 
 export default Login;
-
-
-
 
 // fetch('/api/login', {
 //   method: 'POST',

@@ -28,7 +28,7 @@ import F1B from "../Components/style/Images/F1B.jpg";
 function Home() {
   return (
     <div className="container-fluid main">
-      <div className=" container-fluid titleDiv">
+      <div className="container-fluid titleDiv">
         <div className="row">
           <div className="col-4 test">
             <h1 className="title">Create a Website You’re Proud of!</h1>

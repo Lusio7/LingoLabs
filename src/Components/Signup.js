@@ -1,61 +1,48 @@
 import React, { useEffect, useState } from "react";
 import "../Components/style/signin.css";
-import { Redirect } from 'react-router-dom'
-import isAuthenticated from '../lib/isAuthenticated'
+import { Redirect } from "react-router-dom";
+import isAuthenticated from "../lib/isAuthenticated";
 import "../Components/style/signin.css";
 import API from "../utils/API";
 
 function Signup() {
+  const [newUser, setNewUser] = useState({
+    username: "",
+    password: "",
+    email: "",
+  });
 
-  const [newUser,setNewUser]=useState(
-    {username:"",
-    password:"",
-    email:""
+  const [loggedin, setLoggedin] = useState("false");
 
-    })
-
-    const[loggedin, setLoggedin]=useState(
-      "false"
-    )
-  
-  
-  const handleInputChange = function(event) {
+  const handleInputChange = function (event) {
     const { name, value } = event.target;
     console.log(name, value);
-    setNewUser({...newUser, [name]: value})};
+    setNewUser({ ...newUser, [name]: value });
+  };
 
-  const handleSignUpSubmit =  async function(event){
-    
+  const handleSignUpSubmit = async function (event) {
     console.log(newUser);
-    console.log("========")
-    // this.props.history.push("/"); 
+    console.log("========");
+    // this.props.history.push("/");
     // this.history.pushState(null, '/');
 
+    event.stopPropagation();
+    event.preventDefault();
+    var newUserInfo = { username: newUser.username, email: newUser.email };
+    var newSignup = { username: newUser.username, password: newUser.password };
+    try {
+      API.signup(newSignup)
+        .then(function (data) {
+          console.log(data);
+          setLoggedin("true");
 
-  event.stopPropagation();
-  event.preventDefault();
-  var newUserInfo = {username:newUser.username,
-                email:newUser.email};
-  var newSignup = {username:newUser.username,
-             password:newUser.password};
-  try{
-  API.signup(newSignup)
-  .then(function(data){
-    console.log(data)
-  setLoggedin("true")
-
-
-  alert("helo!")})
-  .then(  API.createUserInfo(newUserInfo)
-)  
-}
-catch(err){
-  console.error(err)
-}
-  
-  }
-
-  
+          //alert("Welcome to LingoLabs");
+        })
+        .then(API.createUserInfo(newUserInfo));
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   // if (loggedin == true ) {
   //   return (
@@ -67,9 +54,6 @@ catch(err){
   //     />
   //   )}
 
-
-
-    
   return (
     <div className="m">
       <a href="#openModalSignin" className="nav-links">
@@ -119,7 +103,17 @@ catch(err){
                   onClick={handleSignUpSubmit}
                 />
               </form>
-  <div className = {"fadeIn third "+ (loggedin ==="true"? 'visible':'invisible' )}><p>Signed Up</p><a className="backToHome" href="/">go back home</a></div>
+              <div
+                className={
+                  "fadeIn third " +
+                  (loggedin === "true" ? "visible" : "invisible")
+                }
+              >
+                <p>Signed Up</p>
+                <a className="backToHome" href="/">
+                  Home Page
+                </a>
+              </div>
             </div>
           </div>
         </div>

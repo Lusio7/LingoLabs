@@ -166,7 +166,7 @@ function Templates(props) {
                     variant="outline-primary"
                     number="one"
                     name="popular website 1"
-                    src=" https://github.com/project3-2020/Popular_1.git"
+                    src="https://github.com/project3-2020/Popular_1/archive/master.zip"
                     price="1200.00"
                     onClick={addToCart}
                   >
@@ -200,7 +200,7 @@ function Templates(props) {
                     className="button"
                     number="two"
                     name="popular website 2"
-                    src="https://github.com/project3-2020/Popular_2.git"
+                    src="https://github.com/project3-2020/Popular_2/archive/master.zip"
                     price="1200.00"
                     onClick={addToCart}
                   >
@@ -237,7 +237,7 @@ function Templates(props) {
                     variant="outline-primary"
                     number="three"
                     name="popular website 3"
-                    src="https://github.com/project3-2020/Popular_3.git"
+                    src="https://github.com/project3-2020/Popular_3/archive/master.zip"
                     price="1200.00"
                     onClick={addToCart}
                   >
@@ -271,7 +271,7 @@ function Templates(props) {
                     className="button"
                     number="four"
                     name="popular website 4"
-                    src="https://github.com/project3-2020/Popular_4.git"
+                    src="https://github.com/project3-2020/Popular_4/archive/master.zip"
                     price="1200.00"
                     onClick={addToCart}
                   >
@@ -306,7 +306,7 @@ function Templates(props) {
                     className="button"
                     number="five"
                     name="popular website 5"
-                    src="https://github.com/project3-2020/Popular_5.git"
+                    src="https://github.com/project3-2020/Popular_5/archive/master.zip"
                     price="1200.00"
                     onClick={addToCart}
                   >
@@ -341,7 +341,7 @@ function Templates(props) {
                     className="button"
                     number="six"
                     name="popular website 6"
-                    src="https://github.com/project3-2020/Popular_6.git"
+                    src="https://github.com/project3-2020/Popular_6/archive/master.zip"
                     price="1200.00"
                     onClick={addToCart}
                   >
